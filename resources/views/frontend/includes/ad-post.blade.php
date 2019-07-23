@@ -7,6 +7,8 @@
                 </h3>
                     {{--<h4>Ghoreyboshe.com--এ আপনার বিজ্ঞাপন পোস্ট করুন।</h4>--}}
                 <i class="fa fa-hand-o-down"></i>
+
+                
             </div>
             @if(Session::get('frontUserId'))
                 <a href="{{route('post-ad')}}" class="btn btn-ad-post btn-lg">GhoreyBoshe.com এ আপনার বিজ্ঞাপন দিন </a>

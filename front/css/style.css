@@ -12,8 +12,10 @@ body{
 
 /*main_menu start*/
 #main_menu .navbar-brand {
-    padding: 10px 15px;
+/*    padding: 10px 15px;*/
     height:auto;
+	margin-top: -60px;
+	
 }
 #main_menu .navbar {
     border-radius: 0px; 
@@ -173,6 +175,7 @@ ol ol, ol ul, ul ol, ul ul {
     font-weight: bold;
     padding: 10px 20px;
     box-shadow:1px 1px darkgray;
+    font-size: 12px;
 }
 /* margin-class */
 .mt{
