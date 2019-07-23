@@ -1,0 +1,39 @@
+[21-Dec-2018 17:19:17 UTC] PHP Warning:  require(/home/ghoreyboshe/public_html/../ghoreyboshe/bootstrap/autoload.php): failed to open stream: No such file or directory in /home/ghoreyboshe/public_html/index.php on line 22
+[21-Dec-2018 17:19:17 UTC] PHP Warning:  require(/home/ghoreyboshe/public_html/../ghoreyboshe/bootstrap/autoload.php): failed to open stream: No such file or directory in /home/ghoreyboshe/public_html/index.php on line 22
+[21-Dec-2018 17:19:17 UTC] PHP Fatal error:  require(): Failed opening required '/home/ghoreyboshe/public_html/../ghoreyboshe/bootstrap/autoload.php' (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/ghoreyboshe/public_html/index.php on line 22
+[12-Feb-2019 14:56:48 UTC] PHP Fatal error:  Uncaught ErrorException: include(/home/ghoreyboshe/ghoreyboshe/vendor/composer/../../app/Exceptions/Handler.php): failed to open stream: Permission denied in /home/ghoreyboshe/ghoreyboshe/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/ghoreyboshe/ghoreyboshe/vendor/composer/ClassLoader.php(444): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'include(/home/g...', '/home/ghoreybos...', 444, Array)
+#1 /home/ghoreyboshe/ghoreyboshe/vendor/composer/ClassLoader.php(444): include()
+#2 /home/ghoreyboshe/ghoreyboshe/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile('/home/ghoreybos...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Exceptions\\...')
+#4 [internal function]: spl_autoload_call('App\\Exceptions\\...')
+#5 /home/ghoreyboshe/ghoreyboshe/vendor/laravel/framework/src/Illuminate/Container/Container.php(729): ReflectionClass->__construct('App\\Exceptions\\...')
+#6 /home/ghoreyboshe/ghoreyboshe/vendor/laravel/framework/src/Illuminate/Contain in /home/ghoreyboshe/ghoreyboshe/vendor/composer/ClassLoader.php on line 444
+[12-Feb-2019 14:56:49 UTC] PHP Fatal error:  Uncaught ErrorException: include(/home/ghoreyboshe/ghoreyboshe/vendor/composer/../../app/Exceptions/Handler.php): failed to open stream: Permission denied in /home/ghoreyboshe/ghoreyboshe/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/ghoreyboshe/ghoreyboshe/vendor/composer/ClassLoader.php(444): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'include(/home/g...', '/home/ghoreybos...', 444, Array)
+#1 /home/ghoreyboshe/ghoreyboshe/vendor/composer/ClassLoader.php(444): include()
+#2 /home/ghoreyboshe/ghoreyboshe/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile('/home/ghoreybos...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Exceptions\\...')
+#4 [internal function]: spl_autoload_call('App\\Exceptions\\...')
+#5 /home/ghoreyboshe/ghoreyboshe/vendor/laravel/framework/src/Illuminate/Container/Container.php(729): ReflectionClass->__construct('App\\Exceptions\\...')
+#6 /home/ghoreyboshe/ghoreyboshe/vendor/laravel/framework/src/Illuminate/Contain in /home/ghoreyboshe/ghoreyboshe/vendor/composer/ClassLoader.php on line 444
+[15-Apr-2019 19:46:33 UTC] PHP Fatal error:  Uncaught ErrorException: include(/home/ghoreyboshe/ghoreyboshe/vendor/composer/../../app/Exceptions/Handler.php): failed to open stream: Permission denied in /home/ghoreyboshe/ghoreyboshe/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/ghoreyboshe/ghoreyboshe/vendor/composer/ClassLoader.php(444): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'include(/home/g...', '/home/ghoreybos...', 444, Array)
+#1 /home/ghoreyboshe/ghoreyboshe/vendor/composer/ClassLoader.php(444): include()
+#2 /home/ghoreyboshe/ghoreyboshe/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile('/home/ghoreybos...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Exceptions\\...')
+#4 [internal function]: spl_autoload_call('App\\Exceptions\\...')
+#5 /home/ghoreyboshe/ghoreyboshe/vendor/laravel/framework/src/Illuminate/Container/Container.php(729): ReflectionClass->__construct('App\\Exceptions\\...')
+#6 /home/ghoreyboshe/ghoreyboshe/vendor/laravel/framework/src/Illuminate/Contain in /home/ghoreyboshe/ghoreyboshe/vendor/composer/ClassLoader.php on line 444
+[15-Apr-2019 20:14:57 UTC] PHP Fatal error:  Uncaught ErrorException: include(/home/ghoreyboshe/ghoreyboshe/vendor/composer/../../app/Exceptions/Handler.php): failed to open stream: Permission denied in /home/ghoreyboshe/ghoreyboshe/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/ghoreyboshe/ghoreyboshe/vendor/composer/ClassLoader.php(444): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'include(/home/g...', '/home/ghoreybos...', 444, Array)
+#1 /home/ghoreyboshe/ghoreyboshe/vendor/composer/ClassLoader.php(444): include()
+#2 /home/ghoreyboshe/ghoreyboshe/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile('/home/ghoreybos...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Exceptions\\...')
+#4 [internal function]: spl_autoload_call('App\\Exceptions\\...')
+#5 /home/ghoreyboshe/ghoreyboshe/vendor/laravel/framework/src/Illuminate/Container/Container.php(729): ReflectionClass->__construct('App\\Exceptions\\...')
+#6 /home/ghoreyboshe/ghoreyboshe/vendor/laravel/framework/src/Illuminate/Contain in /home/ghoreyboshe/ghoreyboshe/vendor/composer/ClassLoader.php on line 444
