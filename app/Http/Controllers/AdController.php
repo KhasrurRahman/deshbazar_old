@@ -181,6 +181,9 @@ class AdController extends Controller
             'similarAds3'=>$similarAds3,
             ]);
     }
+
+
+
     public function singlePropertyView($id){
         $property = DB::table('property_details')
             ->where('property_details.id','=',$id)

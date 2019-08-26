@@ -173,7 +173,7 @@ ol ol, ol ul, ul ol, ul ul {
     color:black;
     background: linear-gradient(white,darkgray);
     font-weight: bold;
-    padding: 10px 20px;
+    padding: 10px 0px;
     box-shadow:1px 1px darkgray;
     font-size: 12px;
 }

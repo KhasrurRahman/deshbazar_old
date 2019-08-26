@@ -39,7 +39,8 @@
                 </a>
             </div>
         </div><hr/>
-        <h5 class="text-center">Copyright © ghoreyboshe.com</h5>
+        <h5 class="text-center">Copyright © ghoreyboshe.com <br>Total visitor:<div id="sfcutkwhqq1talqwt9y3ustqmy94r827mn6"></div></h5>
+
 
     </div>
 </div>

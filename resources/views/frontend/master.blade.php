@@ -16,11 +16,91 @@
     <link href="{{asset('/') }}front/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     <link href="{{asset('/') }}front/css/flexslider.css" rel="stylesheet" type="text/css"/>
     <link href="{{asset('/') }}front/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('/') }}front/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('/') }}front/css/owl.theme.default.css" rel="stylesheet" type="text/css"/>
     <script src="{{asset('/') }}front/js/jquery.min.js" type="text/javascript"></script>
     <script src="{{asset('/')}}front/ckeditor/ckeditor.js"></script>
     <script src="{{asset('/')}}front/ckeditor/samples/js/sample.js"></script>
-    
+
     <link rel="stylesheet" href="{{asset('/')}}front/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
+
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+
+
 
 </head>
 
@@ -181,6 +261,32 @@
 @include('frontend.includes.category-modal')
 <!--  category_modal   modal end here-->
 
+
+
+
+
+<div id="sfcutkwhqq1talqwt9y3ustqmy94r827mn6"></div>
+<script type="text/javascript" src="https://counter7.wheredoyoucomefrom.ovh/private/counter.js?c=utkwhqq1talqwt9y3ustqmy94r827mn6&down=async" async></script>
+<noscript><a href="https://www.freecounterstat.com" title="website hit counter"><img src="https://counter7.wheredoyoucomefrom.ovh/private/freecounterstat.php?c=utkwhqq1talqwt9y3ustqmy94r827mn6" border="0" title="website hit counter" alt="website hit counter"></a></noscript>
+
+
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/5cd99120d07d7e0c639356df/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
+<!--End of Tawk.to Script-->
+
+
 <script>
     $(window).load(function () {
         $('.flexslider').flexslider({
@@ -190,10 +296,18 @@
     });
 </script>
 
+
+
+
+
+
+
+
 <script src="{{asset('/') }}front/js/imagezoom.js" type="text/javascript"></script>
 <script src="{{asset('/') }}front/js/ajax.js" type="text/javascript"></script>
 <script src="{{asset('/') }}front/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="{{asset('/') }}front/js/jquery.flexslider.js" type="text/javascript"></script>
+<script src="{{asset('/') }}front/js/owl.carousel.js" type="text/javascript"></script>
 <script>
     initSample();
 </script>
@@ -202,6 +316,18 @@
         $('#alert-close').click(function () {
            $('#alert').hide();
         });
+    });
+</script>
+
+<script>
+    var owl = $('.owl-carousel');
+    owl.owlCarousel({
+        items:3,
+        loop:true,
+        margin:10,
+        autoplay:true,
+        autoplayTimeout:2000,
+        autoplayHoverPause:true
     });
 </script>
 

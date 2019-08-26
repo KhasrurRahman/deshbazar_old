@@ -6,6 +6,9 @@
 @section('body')
     @include('frontend.includes.notification')
 
+
+    <div class="container"><img src="{{asset('/') }}front/images/after_logo.jpg" style="width: 100%"> </div>
+
     <div id="welcome">
         <div class="container">
             <div class="row">
@@ -19,20 +22,77 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-4 well text-center">
-                    <div class="media">
-                        <div class="media-object media-left">
-                            <i class="fa fa-facebook-official"></i>
+                    <div class="row">
+                        <div class="media col-md-12"style="background: #e7edee">
+                            <div class="media-object media-left">
+                                <i class="fa fa-facebook-official"></i>
+                            </div>
+                            <div class="media-body">
+                                <a href="https://www.facebook.com/ghoreyboshe/">GhoreyBoshe.com পেজে লাইক দিন</a>
+                            </div>
                         </div>
-                        <div class="media-body">
-                            <a href="https://www.facebook.com/ghoreyboshe/">GhoreyBoshe.com পেজে লাইক দিন</a>
+                        <div class="col-md-12">
+                            <p style="    font-weight: bold;color: red;font-size: 19px;">ঢাকা বিভাগে ১৭ টা জেলাঃ</p>
+                            <div class="owl-carousel">
+                                <div> <img src="{{asset('/') }}front/images/city.jpg" style="width: 100%"> </div>
+                                <div> <img src="{{asset('/') }}front/images/city.jpg" style="width: 100%"> </div>
+                                <div> <img src="{{asset('/') }}front/images/city.jpg" style="width: 100%"> </div>
+                                <div> <img src="{{asset('/') }}front/images/city.jpg" style="width: 100%"> </div>
+                                <div> <img src="{{asset('/') }}front/images/city.jpg" style="width: 100%"> </div>
+                                <div> <img src="{{asset('/') }}front/images/city.jpg" style="width: 100%"> </div>
+                                <div> <img src="{{asset('/') }}front/images/city.jpg" style="width: 100%"> </div>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
+
         </div>
     </div>
     <!--       welcome end-->
+
+    <div class="container" style="margin-bottom: 10px">
+        <div class="row">
+            <div class="col-md-9 col-sm-12">
+
+                    <p style="    font-size: 15px;
+    font-weight: bold;">বাংলাদেশ-এর সবগুলো বিভাগ:</p>
+                        <ul>
+                            @foreach($divisions as $division)
+                                <li class="media" style="float: left;
+    margin-left: 5px;
+    height: 36px;
+    width: 86px;
+    border: 1px solid red;
+    text-align: center;
+    background: #a5cd4f;
+    border-radius: 14%;
+    padding: 7px;
+    color: black;
+    margin-top: 10px;">
+                                    <a href="{{route('divisional-product',['id'=>$division->id])}}" style="    color: black;font-size: 13px">
+                                       {{$division->division_name}}
+                                            <span style="color:darkslategray;">({{$division->divisional_products_count}})</span>
+
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <img src="{{asset('/') }}front/images/ResizerImage320X100.jpg" class="img-fluid img-thumbnail">
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
 
     <!-- slider start-->
     <div id="slider">
@@ -118,43 +178,13 @@
                         </div>
                     </div>
 
-                    <div class="panel-group">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapse_manu2">অবস্থান:</a>
-                                </h4>
-                            </div>
-                            <div id="collapse_manu2" class="panel-collapse collapse in">
-                                <div class="panel-body">
-                                    <ul>
-                                        <li><a href="#">বাংলাদেশ-এর সবগুলো বিভাগ</a>
-                                            <ul>
-                                                @foreach($divisions as $division)
-                                                    <li class="media">
-                                                        <a href="{{route('divisional-product',['id'=>$division->id])}}">
-                                                            <div class="media-object media-left">
 
-                                                            </div>
-                                                            <div class="media-body">{{$division->division_name}}
-                                                                <span style="color:darkslategray;">({{$division->divisional_products_count}})</span>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                @endforeach
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-md-8">
                     <div class="col-md-12">
                         <div class="col-md-6 text-center">
                             <div class="jumbotron">
-                                <h3><a href="{{route('terms')}}">GhoreyBoshe.com এর নির্দেশনাসমূহ পড়ুন</a></h3>
+                                <h3><a href="{{route('terms')}}" style="font-size: 16px">GhoreyBoshe.com এর নির্দেশনাসমূহ পড়ুন</a></h3>
                             </div>
                         </div>
                         <div class="col-md-6 text-center">
@@ -258,8 +288,7 @@
 
         </div>
     </div>
-    </div>
-    </div>
+
 
     @include('frontend.includes.ad-post')
 

@@ -87,22 +87,22 @@
                     <p>{{Carbon\Carbon::parse($product->updated_at)->format("F j, Y, g:i A")}}, {{$product->location}}, {{$product->district_name}}</p>
                     <hr/>
                     <table class="table">
-                        <tr>
+                        <tr class="success">
                             <th>মূল্য (৳)</th>
                             <td>{{$product->product_price}} <br />{{$product->product_price_check}}</td>
                         </tr>
-                        <tr>
+                        <tr class="danger">
                             <th>কন্ডিশন</th>
                             <td>{{$product->product_condition}}</td>
                         </tr>
                         @if($product->product_brand)
-                        <tr>
+                        <tr class="warning">
                             <th>ব্র্যান্ড</th>
                             <td>{{$product->product_brand}}</td>
                         </tr>
                         @endif
                         @if($product->product_model)
-                            <tr>
+                            <tr class="info">
                                 <th>মডেল</th>
                                 <td>{{$product->product_model}}</td>
                             </tr>
@@ -111,10 +111,16 @@
 
                     <hr/>
                     <h3>যোগাযোগ করুন</h3>
-                    <a href="#"><h3><i class="fa fa-phone"></i> {{$product->phone_number}}</h3></a><hr/>
-                    <a href="#">
-                        <img src="{{asset('/') }}front/images/cat.png" alt=""/>
-                        চ্যাট</a><hr/>
+                    <table class="table">
+                        <tr class="bg-success">
+                            <th><h3><i class="fa fa-phone"></i></h3></th>
+                            <th><h3>{{$product->phone_number}}</h3></th>
+                        </tr>
+                        <tr class="bg-danger">
+                            <th><h3><a href="#"><i class="fa fa-comment"></i></a></h3></th>
+                            <th><a href="#"><h3>চ্যাট</h3></a></th>
+                        </tr>
+                    </table>
                     {{--<h3>এই সদস্যর বিজ্ঞাপন ভিজিট করুন।</h3><hr/>--}}
                     {{--<a href="#"><h4>JONH IPS( Munna AD)</h4></a>--}}
                     {{--<p>JONH IPS & UPS আপনার নির্ভরযোগ্য বন্ধু</p><hr/>--}}
@@ -135,9 +141,37 @@
                 </div>
             </div>
         </div>
+
+
+
+        <div class="container">
+            <div class="col-sm-12 col-lg-8 col-md-12  ">
+                <h3>যোগাযোগ করুন</h3>
+                <table class="table">
+                    <tr class="active">
+                        <th scope="col"><h3><i class="fa fa-phone"></i></h3></th>
+                        <th scope="col"><h3>{{$product->phone_number}}</h3></th>
+                    </tr>
+                    <tr class="active">
+                        <th scope="col"><h3><a href="#"><i class="fa fa-comment"></i></a></h3></th>
+                        <th scope="col"><a href="#"><h3>চ্যাট</h3></a></th>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-sm-12 col-lg-4 col-md-12">
+                <img src="{{asset('/') }}front/images/ResizerImage336X280.jpg" class="img-fluid img-thumbnail">
+            </div>
+        </div>
+
     </div>
 
     <!--        products details end-->
+
+
+
+
+
 
 
 
