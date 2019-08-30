@@ -23,6 +23,7 @@
                 <a href="{{route('secret-terms')}}">ব্যবহারকারী গোপনীয়তা</a><br>
                 <a href="{{route('contact-us')}}">যোগাযোগ করুন</a><br>
                 <a href="{{route('ghoreyboshe-career')}}">স্থানীয় ঘরেবসে.কম ক্যারিয়ারের সুযোগ</a><br>
+                <a href="#">সনির্দেশনাসমূহ পড়ুন</a><br>
             </div>
             <div class="col-md-3 mb">
                 <a href="https://www.facebook.com/ghoreyboshe/" class="share-icon facebook">

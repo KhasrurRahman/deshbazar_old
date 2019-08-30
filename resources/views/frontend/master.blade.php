@@ -131,10 +131,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 <p class="text-justify">আমাদের ঘরেবসে.কম এ লগইন/নিবন্ধন করে ক্রেতা-বিক্রেতা উভয়ই একই ভাবে অনেক বড় সুবিধা ভোগ করতে পারবেন এবং এটি সম্পূর্ বিনামূল্যে।</p>
                 <p class="text-justify">আমাদের ঘরেবসে.কম এ লগইন/ নিবন্ধন করতে সময় লাগবে মাত্র <strong>এক মিনিট </strong> ।</p>
                 <ol class="mb" type="1">
-                    <li>ঘরেবসে.কম এ আপনি প্রতিদিন বিনামুল্যে হাজার হাজার বিজ্ঞাপন পোস্ট করতে পারেন।</li>
-                    <li>ঘরেবসে.কম এ আপনি একজন স্বেচ্ছাসেবক হিসেবে কাজ করে অর্ উপার্ন করতে পারেন।</li>
-                    <li>মনে রাখবেন আমাদের ঘরেবসে.কম এ লগইন/নিবন্ধন পদ্ধতি সম্পূর্ বিনামূল্যে।</li>
-                    <li>আপনি বিনামূল্যে আমাদের বিজ্ঞাপনের শুরু থেকে টিপস এবং ট্রিকস পেতে পারেন।</li>
+                    <li>ঘরেবসে.কম এ আপনি প্রতিদিন বিনামুল্যে শত শত বিজ্ঞাপন পোস্ট করতে পারেন।</li>
+                    <li>ঘরেবসে.কম এ আপনি একজন স্বেচ্ছাসেবক হিসেবে কাজ করে টাকা উপার্জন করতে পারেন।</li>
+                    <li>বিভিন্ন ধরনের ঝামেলা ছাড়া অর্থ আদান-প্রদান করুন,কেনা ও বেচার সময় ঘরেবসে.কম এর সাথে যোগাযোগ করুন? প্রতারণা শিকার থেকে ঝামেলা থাকুন। </li>
                 </ol>
 
             </div>
@@ -144,7 +143,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     <div class="col-lg-12 form-group">
                         <a href="{{url('/redirect')}}" class="btn btn-primary btn-block"><i class="fa fa-facebook-official"></i>ফেসবুকের সঙ্গে চলুক</a>
                     </div>
-                    <div class="text-center"><h5>অথবা</h5></div>
+                <div class="col-lg-12 form-group">
+                        <a href="{{url('/redirect')}}" class="btn btn-primary btn-block" style="background: #d94f45"><i class="fa fa-envelope-open"></i>   ইমেইল এর সাথে চলুক</a>
+                    </div>
                     <div class="col-lg-12 form-group">
                         <input type="email" name="email" class="form-control" placeholder="ইমেইল" required >
                     </div>
@@ -155,12 +156,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         <button type="submit" name="btn" class="btn btn-success btn-block"> লগ ইন</button>
                     </div>
 
-                    <div class="text-center"><a>পাসওয়ার্ড ভুলে গেছেন?</a></div>
+                    <div class="text-center"><p>আপনি আপনার পাস্বরদ মনে করতে পারছেন না? রিকভারি করতে চান? </p><a>এখানে ক্লিক করুন।</a></div>
                 {{Form::close()}}
                 <hr/>
                 <div class="text-center">
-                    <h4>এখনো কোনো অ্যাকাউন্ট নেই আপনার?</h4>
-                    <a href="{{route('signup-options')}}"  class="btn btn-default" >সাইন আপ</a>
+                    <h5>আপনার ঘরেবসে.কম এ অ্যাকাউন্ট আছে কি? না? নিছের সাইনআপ বাটোন এ ক্লিক করুন।</h5>
+                    <a href="{{route('signup-options')}}"  class="btn btn-default" style="background: #5cb85c">সাইন আপ</a>
                 </div>
 
             </div>
@@ -179,22 +180,25 @@ body {font-family: Arial, Helvetica, sans-serif;}
         <div class="col-md-12 col-sm-12  col-xs-12 modal-content">
 
             <div class="col-md-6 col-sm-6 col-xs-6 left_containte">
-                <h4>নিজের চ্যাট</h4>
-                <p>আপনি আপনার চ্যাট দেখদত চাইলে লগইন করুন। আপনার কতগুলো চ্যাট আছে তা দেখুন।</p>
+                <h4>নিজের চ্যাট দেখুন </h4>
+                <p>আপনি আপনার ম্যাসেজ দেখতে চাইলে লগইন করুন। আপনার কতগুলো চ্যাট আছে তা দেখতে শুরু করুন । </p>
                 <ul class="mb">
-                    <li>আপনার বিজ্ঞাপন এর কতগুলো মেসেজ আছে তা দেখুন।</li>
-                    <li>আপনার বিজ্ঞাপনগুলো আপনার পেজবুকে শেয়ার করুন।</li>
-                    <li>আপনি আপনার বিজ্ঞাপন শেয়ার করুন।</li>
+                    <li>আপনার বিজ্ঞাপন এর কতগুলো ম্যাসেজ আছে তা দেখুন।</li>
+                    <li>আপনার বিজ্ঞাপনগুলো আপনার পেজবুক আইডিতে শেয়ার করুন।</li>
                     <li>ঘরেবসে.কম এর সাথে থাকুন।</li>
+                    <li>আপনি কিভাবে ম্যাসেজ এর মাধ্যমে,আপনার ক্রেতার সাথে তথ্য আদান প্রদান করতে পারেন। </li>
+                    <li>আপনি যেখানে থাকেন না কেনো, চ্যাট এর মাধ্যমে ক্রেতার চাহিদা জানতে পারেন । </li>
                 </ul>
             </div>
 
             <div class="col-md-6 col-sm-6 col-xs-6 right_form">
                 {{Form::open(['route'=>'front-user-login','method'=>'POST','class'=>'form'])}}
                 <div class="col-lg-12 form-group">
-                    <a href="{{url('/redirect')}}" class="btn btn-primary btn-block"><i class="fa fa-facebook-official"></i>ফেসবুকের সঙ্গে চলুক</a>
+                    <a href="{{url('/redirect')}}" class="btn btn-primary btn-block"><i class="fa fa-facebook-official"></i>ফেসবুক এর সাথে চলুন</a>
                 </div>
-                <div class="text-center"><h5>অথবা</h5></div>
+                <div class="col-lg-12 form-group">
+                    <a href="{{url('/redirect')}}" class="btn btn-primary btn-block" style="background: #d94f45"><i class="fa fa-envelope-open"></i>   ইমেইল এর সাথে চলুক</a>
+                </div>
                 <div class="col-lg-12 form-group">
                     <input type="email" name="email" class="form-control" placeholder="ইমেইল" required >
                 </div>
@@ -209,8 +213,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 {{Form::close()}}
                 <hr/>
                 <div class="text-center">
-                    <h4>এখনো কোনো অ্যাকাউন্ট নেই আপনার?</h4>
-                    <a href="{{route('signup-options')}}"  class="btn btn-default" >সাইন আপ</a>
+                    <h5>আপনার ঘরেবসে.কম এ অ্যাকাউন্ট আছে কি? না? নিছের সাইনআপ বাটোন এ ক্লিক করুন ।</h5>
+                    <a href="{{route('signup-options')}}"  class="btn btn-default" style="background: #5cb85c;color: white">সাইন আপ করুন </a>
                 </div>
 
             </div>

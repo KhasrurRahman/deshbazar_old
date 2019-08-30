@@ -12,7 +12,9 @@
                         <img src="{{asset($websiteInformation->logo) }}" alt="Logo" style="height: 158px;width: 215px;margin-bottom: -38px;"/>
                     </a>
                 </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
+                <div class="collapse navbar-collapse" id="myNavbar" @if(Session::get('frontUserId'))
+                        style="font-size: 17px;"
+                        @endif>
                     <ul class="nav navbar-nav">
                         <li><a href="{{route('all-ad')}}">সর্ব প্রকার বিজ্ঞাপন</a></li>
                         <li><a href="{{route('ghoreyboshe-family')}}">Ghoreyboshe.com এর পরিবার</a></li>
