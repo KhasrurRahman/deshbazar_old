@@ -97,6 +97,13 @@ class ManageProductController extends Controller
         $productAd->product_price = $request->product_price;
         $productAd->product_price_check = $request->product_price_check;
         $productAd->product_description = $request->product_description;
+
+        $productAd->product_model_year_cc = $request->product_model_year_cc;
+        $productAd->nibondhon_year = $request->product_publish_year;
+        $productAd->fuel = $request->product_oil;
+        $productAd->km_ride = $request->product_km_ride;
+        $productAd->servising = $request->product_servising_time;
+        $productAd->village_ord = $request->product_village_word;
         $productAd->save();
 
         $userid = Session::get('frontUserId');

@@ -19,9 +19,24 @@
                         <li><a href="{{route('all-ad')}}">সর্ব প্রকার বিজ্ঞাপন</a></li>
                         <li><a href="{{route('ghoreyboshe-family')}}">Ghoreyboshe.com এর পরিবার</a></li>
                     </ul>
+                    @php
+                        use App\chat;
+                        $userid = Session::get('frontUserId');
+                    @endphp
+
+
                     <div class="navbar-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="#chat_modal" data-toggle="modal"><i class="fa fa-comments-o"></i></a></li>
+                            @if(Session::get('frontUserId'))
+                                @if(chat::where('to',$userid)->where('status',0)->get()->count() !== 0)
+                                    <li><a href="{{route('chat')}}" style="padding: 0px;margin: 0px"><img src="{{asset('/') }}front/images/notefi.png" style="height: 35px;margin-top: 23px"></a></li>
+
+                                    @else
+                                    <li><a href="{{route('chat')}}" data-toggle="modal"><i class="fa fa-comments-o"></i></a></li>
+                                @endif
+                            @else
+                                <li><a href="{{route('signup-options')}}" data-toggle="modal"><i class="fa fa-comments-o"></i></a></li>
+                            @endif
                             @if(Session::get('frontUserId'))
                                 <li><a  href="{{route('front-user-dashboard')}}" ><i class="fa fa-user"></i>আমার অ্যাকাউন্ট</a></li>
                             @else

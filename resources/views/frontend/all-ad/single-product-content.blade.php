@@ -23,7 +23,7 @@
 @endsection
 
 @section('body')
-
+    @include('frontend.includes.notification')
     <div id="products_dtailes" style="background: #fff">
         <div class="container">
             <div class="row">
@@ -107,6 +107,63 @@
                                 <td>{{$product->product_model}}</td>
                             </tr>
                         @endif
+
+                        @if($product->product_model)
+                            <tr class="info">
+                                <th>মডেল</th>
+                                <td>{{$product->product_model}}</td>
+                            </tr>
+                        @endif
+
+                        @if(isset($product->product_reality))
+                            <tr class="info">
+                                <th>জেনুইন: </th>
+                                <td>{{$product->product_reality}}</td>
+                            </tr>
+                        @endif
+
+                        @if(isset($product->product_model_year_cc))
+                            <tr class="info">
+                                <th>মডেল সাল ও সিসি: </th>
+                                <td>{{$product->product_model_year_cc}}</td>
+                            </tr>
+                        @endif
+
+                        @if(isset($product->nibondhon_year))
+                           <tr class="info">
+                            <th>নিবন্ধন সাল:</th>
+                            <td> {{$product->nibondhon_year}}</td>
+                        </tr>
+                        @endif
+
+                        @if(isset($product->fuel))
+                            <tr class="warning">
+                               <th> কি তেলে চলে:</th>
+                               <td> {{$product->fuel}}</td>
+                            </tr>
+                        @endif
+
+                        @if(isset($product->km_ride))
+                            <tr class="info">
+                                <th>যানবাহন কত কিলোমিটার চলচ্ছেঃ</th>
+                                <td> {{$product->km_ride}}</td>
+                            </tr>
+                        @endif
+
+                        @if(isset($product->servising))
+                            <tr class="info">
+                                <th>গাড়ি এই যাবত কতবার সার্ভিস হয়েছে: </th>
+                                <td>{{$product->servising}}</td>
+                            </tr>
+                        @endif
+
+                        @if(isset($product->village_ord))
+                            <tr class="info">
+                               <th>গ্রাম ও ওয়ার্ডঃ:</th>
+                               <td> {{$product->village_ord}}</td>
+                            </tr>
+                        @endif
+
                     </table>
 
                     <hr/>
@@ -118,13 +175,17 @@
                         </tr>
                         <tr class="bg-danger">
                             <th><h3><a href="#"><i class="fa fa-comment"></i></a></h3></th>
-                            <th><a href="#"><h3>চ্যাট</h3></a></th>
+                            @if(Session::get('frontUserId'))
+                            <th><a href="#chat" data-toggle="modal"><h3>ম্যাসেজ/চ্যাট করুন</h3></a></th>
+                             @else
+                                <th><a href="{{route('signup-options')}}" data-toggle="modal"><h3>ম্যাসেজ/চ্যাট করুন</h3></a></th>
+                             @endif
                         </tr>
                     </table>
                     {{--<h3>এই সদস্যর বিজ্ঞাপন ভিজিট করুন।</h3><hr/>--}}
                     {{--<a href="#"><h4>JONH IPS( Munna AD)</h4></a>--}}
                     {{--<p>JONH IPS & UPS আপনার নির্ভরযোগ্য বন্ধু</p><hr/>--}}
-                    <a href="{{route('promote-ad',['id'=>$product->id,'infoId'=>$product->information_id])}}" class="btn btn-ad-post btn-block text-danger">আপনার মূল্যবান বিজ্ঞাপন প্রচার করুন।</a>
+                    <a href="{{route('promote-ad',['id'=>$product->id,'infoId'=>$product->information_id])}}" class="btn btn-success btn-block text-danger">আপনার মূল্যবান বিজ্ঞাপন প্রচার করুন।</a>
                     <hr />
                     <h4>বিজ্ঞাপনটি শেয়ার করুন</h4>
 
@@ -153,8 +214,14 @@
                         <th scope="col"><h3>{{$product->phone_number}}</h3></th>
                     </tr>
                     <tr class="active">
-                        <th scope="col"><h3><a href="#"><i class="fa fa-comment"></i></a></h3></th>
-                        <th scope="col"><a href="#"><h3>চ্যাট</h3></a></th>
+                    <tr class="bg-danger">
+                        <th><h3><a href="#"><i class="fa fa-comment"></i></a></h3></th>
+                        @if(Session::get('frontUserId'))
+                            <th><a href="#chat" data-toggle="modal"><h3>ম্যাসেজ/চ্যাট করুন</h3></a></th>
+                        @else
+                            <th><a href="{{route('signup-options')}}" data-toggle="modal"><h3>ম্যাসেজ/চ্যাট করুন</h3></a></th>
+                        @endif
+                    </tr>
                     </tr>
                 </table>
             </div>
@@ -252,6 +319,53 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+{{--    chat nodel here--}}
+    {{--chat model here--}}
+    <div class="modal fade" id="chat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">{{$product->ad_title}}</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img style="    height: 100px;width: 139px;margin-top: 30px;" src="{{asset($product->product_image1) }}"/>
+                        </div>
+
+                        <div class="col-md-9">
+                            <h3>{{$product->product_price}}Tk ,{{$product->product_price_check}}</h3>
+                            <p>{!!str_limit($product->product_description,100)!!}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <form action="{{route('chat_user_create',$product->id)}}" method="get">
+                <div class="modal-body">
+                    <input type="text" class="form-control" name="message" placeholder="ম্যাসেজ">
+                    <input type="hidden" value="" name="sellerid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
 <script>
     $(".more").toggle(function(){
         $(this).text("less..").siblings(".complete").show();

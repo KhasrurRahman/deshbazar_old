@@ -20,6 +20,13 @@ class CreateProductDetailsTable extends Migration
             $table->string('product_condition');
             $table->string('product_brand')->nullable();
             $table->string('product_model')->nullable();
+            $table->string('product_model_year_cc')->nullable();
+            $table->string('nibondhon_year')->nullable();
+            $table->string('fuel')->nullable();
+            $table->string('km_ride')->nullable();
+            $table->string('servising')->nullable();
+            $table->string('village_ord')->nullable();
+
             $table->text('product_description');
             $table->string('product_reality');
             $table->float('product_price',15,2);

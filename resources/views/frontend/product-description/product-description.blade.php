@@ -12,7 +12,7 @@
                     <div class="row" >
 
 
-                        <div class="col-md-12" style="border-right: 2px solid">
+                        <div class="col-md-12">
                             <h3>আপনি কিছু বিক্রি করতে চান? নিছের ফরম পুরন করুন, আপনার পণ্য বিজ্ঞাপন দিয়ে বিক্রি করুন খুব  সহজেঃ </h3><hr><hr/>
                             {{Form::open(['route'=>'save-product-information','method'=>'POST','class'=>'form-horizontal','enctype'=>'multipart/form-data'])}}
 
@@ -25,13 +25,13 @@
                                 <input type="hidden" name="district_id" value="{{$districtId}}"/>
                             </div>
                             <div class="col-md-12 form-group">
-                                <h4>আপনার বিজ্ঞাপন এর নামঃ</h4>
+                                <label class="text-success">আপনার বিজ্ঞাপন এর নামঃ</label>
                                 <input type="text" class="form-control" name="ad_title" placeholder="আপনার বিজ্ঞাপন এর নাম">
                                 <span class="text-danger">{{$errors->has('ad_title') ? $errors->first('ad_title'):' '}}</span>
                             </div>
 
                             <div class="row">
-                                <hr /><h4>আপনার বিজ্ঞাপন এর ছবি আপলোড করুন:</h4><hr />
+                                <hr /><label class="text-success">আপনার বিজ্ঞাপন এর ছবি আপলোড করুন:</label><hr />
                                 <div class="col-md-8 form-group">
                                     <div class="col-md-12 form-group">
                                         <span class="col-md-3">১ম ছবি</span>
@@ -59,37 +59,111 @@
                                     </div>
                                 </div>
                             </div>
+                            <h4>আপনার বিজ্ঞাপন এর শুরু থেকে শেষ পযন্ত বিবরণ দিনঃ</h4><hr><hr/>
 
-                            <div class="col-md-12">
-                                <hr />
-                                <h4>আপনার বিজ্ঞাপন এর শুরু থেকে শেষ পযন্ত বিবরণ দিনঃ</h4><hr><hr/>
-                                <h4>কন্ডিশন:</h4>
-                                    <label><input type="radio" name="product_condition" value="ব্যবহৃত" />ব্যবহৃত</label>
-                                    <label><input type="radio" name="product_condition" value="নতুন" />নতুন</label>
-                                    <span class="text-danger">{{$errors->has('product_condition') ? $errors->first('product_condition'):' '}}</span>
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <span>ব্র্যান্ডঃ</span>
-                                <input type="text" class="form-control" name="product_brand" placeholder="ব্র্যান্ড">
-                                <span class="text-danger">{{$errors->has('product_brand') ? $errors->first('product_brand'):' '}}</span>
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <span>মডেলডঃ</span>
-                                <input type="text" class="form-control" name="product_model" placeholder="মডেল ">
-                                <span class="text-danger">{{$errors->has('product_model') ? $errors->first('product_model'):' '}}</span>
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <span>বিবরণ ( 0 / 1000 )</span>
-                                <textarea name="product_description" id="editor" class="form-control" placeholder="বিবরণ  " rows="8" cols="10"></textarea>
-                                <span class="text-danger">{{$errors->has('product_description') ? $errors->first('product_description'):' '}}</span>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="col-md-12">
+                                        <label class="text-success">কন্ডিশন:</label>
+                                        <label><input type="radio" name="product_condition" value="ব্যবহৃত" />ব্যবহৃত</label>
+                                        <label><input type="radio" name="product_condition" value="নতুন" />নতুন</label>
+                                        <span class="text-danger">{{$errors->has('product_condition') ? $errors->first('product_condition'):' '}}</span>
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <label class="text-success">ব্র্যান্ডঃ</label>
+                                        <input type="text" class="form-control" name="product_brand" placeholder="ব্র্যান্ড">
+                                        <span class="text-danger">{{$errors->has('product_brand') ? $errors->first('product_brand'):' '}}</span>
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <label class="text-success">মডেলডঃ</label>
+                                        <input type="text" class="form-control" name="product_model" placeholder="মডেল ">
+                                        <span class="text-danger">{{$errors->has('product_model') ? $errors->first('product_model'):' '}}</span>
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <label class="text-success">মডেল সাল ও সিসিঃ</label>
+                                        <input type="text" class="form-control" name="product_model_year_cc" placeholder="মডেল সাল ও সিসি ">
+                                        <span class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <label class="text-success">নিবন্ধন সালঃ</label>
+                                        <input type="date" class="form-control" name="product_publish_year" placeholder="িবন্ধন সাল">
+                                        <span class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <label class="text-success">কি তেলে চলেঃ </label><br>
+                                        <label><input type="radio" name="product_oil" value="পেট্রল" />পেট্রল</label>
+                                        <label><input type="radio" name="product_oil" value="ডিজেল" />ডিজেল</label>
+                                        <label><input type="radio" name="product_oil" value="অকটেন" />অকটেন </label>
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <label class="text-success">জেনুইন: </label><br>
+                                        <label><input type="radio" name="product_reality" value="আসল" />আসল</label>
+                                        <label><input type="radio" name="product_reality" value="রেপ্লিকা/ক্লোন" />রেপ্লিকা/ক্লোন</label>
+                                        <span class="text-danger">{{$errors->has('product_reality') ? $errors->first('product_reality'):' '}}</span>
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <label class="text-success">আপনার যানবাহন কত কিলোমিটার চলচ্ছেঃ</label>
+                                        <input type="text" class="form-control" name="product_km_ride" placeholder="আপনার যানবাহন কত কিলোমিটার চলচ্ছেঃ ">
+                                        <span class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <label class="text-success">আপনার গাড়ি এই যাবত কতবার সার্ভিস হয়েছেঃ</label>
+                                        <input type="number" class="form-control" name="product_servising_time" placeholder="আপনার গাড়ি এই যাবত কতবার সার্ভিস হয়েছেঃ">
+                                        <span class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4" >
+                                    <div class="col-md-12" style="border: 1px solid;margin-top: 30px">
+                                        <h4 style="text-align: center">আপনার যে ফিল্ড লাগবে সেই ফিল্ড ব্যাবহার করুন । </h4>
+                                    </div>
+
+                                    <div class="col-md-12" style="margin-top: 30px;border: 1px solid">
+                                            <h4 style="text-align: center">আপনি ভালো ভাবে বিজ্ঞাপন এর তথ্য দিলে ভালো বিক্রয় হবে । </h4>
+                                        </div>
+                                </div>
+
                             </div>
 
-                            <div class="col-md-12 form-group">
-                                <p>জেনুইন  </p>
-                                <label><input type="radio" name="product_reality" value="আসল" />আসল</label>
-                                <label><input type="radio" name="product_reality" value="রেপ্লিকা/ক্লোন" />রেপ্লিকা/ক্লোন</label>
-                                <span class="text-danger">{{$errors->has('product_reality') ? $errors->first('product_reality'):' '}}</span>
+
+
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="col-md-12 form-group">
+                                        <label class="text-success">বিবরণ ( 0 / 4000 )</label>
+                                        <textarea name="product_description" id="editor" class="form-control" placeholder="বিবরণ  " rows="8" cols="10"></textarea>
+                                        <span class="text-danger">{{$errors->has('product_description') ? $errors->first('product_description'):' '}}</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4" style="margin-top: 30px">
+                                    <div class="col-md-12" style="border: 1px solid">
+                                        <p style="text-align: center">আপনি আপনার পণ্য ভালো ভাবে বিবরণ টাইপ করুন।  </p>
+                                    </div>
+                                </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="col-md-12 form-group">
+                                        <label class="text-success">আপনার উপজেলা </label>
+                                        <input type="text" name="location" class="form-control" placeholder="উপজেলা ">
+                                        <span class="text-danger">{{$errors->has('location') ? $errors->first('location'):' '}}</span>
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <label class="text-success">আপনার গ্রাম ও ওয়ার্ডঃ</label>
+                                        <input type="text" class="form-control" name="product_village_word" placeholder="আপনার গ্রাম ও ওয়ার্ডঃ ">
+                                        <span class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4" style="margin-top: 30px">
+                                    <div class="col-md-12" style="border: 1px solid">
+                                        <p style="text-align: center">আপনার উপজেলা ,গ্রাম ও ওয়ার্ড টাইপ করুন    </p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
                             <div class="col-md-12 form-group" style="margin-top: 20px">
                                 <div class="col-md-5" style="padding-left: 0">
                                     <label>মূল্য (৳)</label>
@@ -106,11 +180,7 @@
                                 <input type="text" name="phone_number" class="form-control" placeholder="ফোন নাম্বার" value="{{$frontUser->phone_number}}">
                                 <span class="text-danger">{{$errors->has('phone_number') ? $errors->first('phone_number'):' '}}</span>
                             </div>
-                            <div class="col-md-12 form-group">
-                                <label class="text-success">আপনার উপজেলা </label>
-                                <input type="text" name="location" class="form-control" placeholder="উপজেলা ">
-                                <span class="text-danger">{{$errors->has('location') ? $errors->first('location'):' '}}</span>
-                            </div>
+
 
                             <button type="submit" class="btn btn-success btn-lg">আপনার এই বিজ্ঞাপন পোস্ট করুন</button>
 
@@ -118,33 +188,11 @@
                         </div>
 
 
-
-
-                        <div class="col-md-4" style="margin-top: 30px">
-                            <div class="col-md-12" style="border: 1px solid">
-                                <p style="text-align: center">আপনার যে ফিল্ড লাগবে সেই ফিল্ড ব্যাবহার করুন । </p>
-                            </div>
-                        </div>
-                        <div class="col-md-4" style="margin-top: 30px">
-                            <div class="col-md-12" style="border: 1px solid">
-                                <p style="text-align: center">আপনি ভালো ভাবে বিজ্ঞাপন এর তথ্য দিলে ভালো বিক্রয় হবে । </p>
-                            </div>
-                        </div>
-                        <div class="col-md-4" style="margin-top: 30px">
-                            <div class="col-md-12" style="border: 1px solid">
-                                <p style="text-align: center">আপনি আপনার পণ্য ভালো ভাবে বিবরণ টাইপ করুন।  </p>
-                            </div>
-                        </div>
-                        <div class="col-md-4" style="margin-top: 30px">
-                            <div class="col-md-12" style="border: 1px solid">
-                                <p style="text-align: center">আপনার উপজেলা ,গ্রাম ও ওয়ার্ড টাইপ করুন    </p>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="col-md-4"></div>
                 </div>
-                <i class="text-warning">ঘরেবসে.কম এ আপনি পোস্ট করতে হলে ঘরেবসে.কম এর নিয়ম অনুযায়ী পোস্ট করতে হবে।</i>
+                <i class="text-success">ঘরেবসে.কম এ আপনি পোস্ট করতে হলে ঘরেবসে.কম এর নিয়ম অনুযায়ী পোস্ট করতে হবে।</i>
             </div>
             <div class="col-md-1"></div>
         </div>

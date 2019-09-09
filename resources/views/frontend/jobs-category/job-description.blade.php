@@ -9,12 +9,12 @@
     <div class="container" id="elct_post_from">
     <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-10 panel panel-default">
+        <div class="col-md-10 panel panel-default" style="box-shadow: 5px 8px 12px;">
             <div class="panel-body">
-                <div class="col-md-8">
-                    <h3>চাকরির বিজ্ঞাপন দিন</h3><hr/>
+                <div class="col-md-12">
+                    <strong><h4>আপনি কি দেশের ও বাহিরের চাকরি ও নিয়োগ বিজ্ঞপ্তি পোস্ট করতে চান, নিছে সব ফিল্ড টাইপ করুনঃ</h4></strong><hr/>
                     <div class="col-md-12">
-                        <h4>চাকরি সম্পর্কে</h4><hr/>
+                        <h4>নিয়োগ বিজ্ঞপ্তি বিবরনঃ</h4><hr/>
                         {{Form::open(['route'=>'save-job-information','method'=>'POST','class'=>'form-horizontal','enctype'=>'multipart/form-data'])}}
                             <div class="col-md-12 form-group">
                                 <input type="hidden" name="user_id" value="{{$frontUser->id}}"/>
@@ -24,11 +24,12 @@
                                 <input type="hidden" name="district_id" value="{{$districtId}}"/>
                             </div>
                             <div class="col-md-12 form-group" style="margin-top: 20px">
+                                <label class="text-success">কাজের শিরোনাম</label>
                                 <input type="text" class="form-control" name="ad_title" placeholder="কাজের শিরোনাম">
                                 <span class="text-danger">{{$errors->has('ad_title') ? $errors->first('ad_title'):' '}}</span>
                             </div>
                             <div class="col-md-12 form-group">
-                                <p>বিবরণ ( 0 / 1000 )</p>
+                                <label class="text-success">নিয়োগ বিজ্ঞপ্তি বিবরনঃ( 0 / 4000 )</label>
                                 <textarea name="description" id="editor" class="form-control" placeholder="বিবরণ  " rows="8" cols="10"></textarea>
                                 <span class="text-danger">{{$errors->has('description') ? $errors->first('description'):' '}}</span>
                             </div>
@@ -37,7 +38,7 @@
                                 <div class="col-md-6" style="padding-left: 0">
                                     <label> </label>
                                     <select name="job_type" class="form-control">
-                                        <option value="">কাজের টাইপ যোগ করুন :   </option>
+                                        <option value="">কাজের টাইপ যোগ করুনঃ</option>
                                         <option value="সম্পূর্ণ সময়">সম্পূর্ণ সময়</option>
                                         <option value="খন্ডকালীন">খন্ডকালীন</option>
                                         <option value="অস্থায়ী">অস্থায়ী</option>
@@ -114,50 +115,149 @@
                                 </div>
                             </div>
                             <div class="col-md-12 form-group" >
-                                <label></label>
-                                <input type="text" name="designation" class="form-control" placeholder="আপনার চাকুরি অবস্তানের নামঃ ">
+                                <label class="text-success">আপনার নিয়োগ বিজ্ঞপ্তি অবস্থানের নামঃ</label>
+                                <input type="text" name="designation" class="form-control" placeholder="আপনার নিয়োগ বিজ্ঞপ্তি অবস্থানের নামঃ">
                                 <span class="text-danger">{{$errors->has('designation') ? $errors->first('designation'):' '}}</span>
                             </div>
 
                             <div class="col-md-12 form-group">
-                                <label>আপনার আবেদন কি ভাবে রিসিভ করবেন</label>
-                                <div class="col-md-6" style="padding-left: 0">
+                                <label class="text-success">আপনার আবেদন কি ভাবে রিসিভ করবেন</label>
                                     <select name="recieve_option" class="form-control">
                                         <option value="নিয়োগকারীর ড্যাশবোর্ড">নিয়োগকারীর ড্যাশবোর্ড</option>
                                         <option value="ফোন">ফোন</option>
                                     </select>
-                                </div>
-                                <div class="col-md-6"></div>
                             </div>
 
                             <div class="col-md-12 form-group">
-                                <h4>মাসিক বেতন </h4>
-                                <div class="col-md-3" style="padding-left: 0">
-                                    <label></label>
-                                    <input type="number" name="starting_range" class="form-control" placeholder="হইতে">
+                                <label class="text-success">প্রতি মাসে বেতনঃ </label>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="number" name="starting_range" class="form-control" placeholder="হইতে">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="number" name="ending_range" class="form-control" placeholder="পর্যন্ত">
+                                    </div>
                                 </div>
-                                <div class="col-md-3" >
-                                    <label></label>
-                                    <input type="number" name="ending_range" class="form-control" placeholder="পর্যন্ত">
-                                </div>
-                                <div class="col-md-6" style="padding-right: 0">
-                                    <label></label>
-                                    <input type="number" name="total_vacancies" class="form-control" placeholder="পদের সংখ্যা ">
-                                </div>
+
+
+
+
                             </div>
+
+                        <div class="col-md-12 form-group">
+                                    <label class="text-success">নিয়োগ বিজ্ঞপ্তি পদের সংখ্যা</label>
+                                    <input type="number" name="total_vacancies" class="form-control" placeholder="পদের সংখ্যা ">
+                            </div>
+
+
                             <div class="col-md-12 form-group">
                                 <div class="col-md-6" style="padding-left:0">
-                                    <label>নিয়োগ শেষ সময় তারিখ </label>
-                                    <input type="text" name="expire_date" class="form-control">
+                                    <label class="text-success">নিয়োগ শেষ সময় তারিখ </label>
+                                    <input type="date" name="expire_date" class="form-control">
                                     <span class="text-danger">{{$errors->has('expire_date') ? $errors->first('expire_date'):' '}}</span>
                                 </div>
-                                <div class="col-md-6"></div>
+                            </div>
+
+                        <div class="col-md-12 form-group">
+                                    <label class="text-success">বয়স আবেদনকারীঃ</label>
+                                    <input type="number" name="expire_date" class="form-control" placeholder="১৮ থেকে ৬০ ">
+                                    <span class="text-danger">{{$errors->has('expire_date') ? $errors->first('expire_date'):' '}}</span>
+                            </div>
+
+                            <div class="col-md-12 form-group">
+                                    <label class="text-success">জব লোকেশনঃ</label>
+                                    <input type="text" name="expire_date" class="form-control" placeholder="জব লোকেশনঃ">
+                                    <span class="text-danger">{{$errors->has('expire_date') ? $errors->first('expire_date'):' '}}</span>
+                            </div>
+
+                            <div class="col-md-12 form-group">
+                                    <label class="text-success">কোম্পানি সুযোগ সুবিধাঃ</label>
+                                <select name="job_type" class="form-control">
+                                    <option value="" selected disabled>কোম্পানি সুযোগ সুবিধাঃ</option>
+                                    <option value="সম্পূর্ণ সময়">আছে</option>
+                                    <option value="সম্পূর্ণ সময়">নাই</option>
+                                </select>
+                            </div>
+
+                        <div class="col-md-12 form-group">
+                                    <label class="text-success">কোম্পানি যানবাহন সুবিধাঃ</label>
+                                <select name="job_type" class="form-control">
+                                    <option value="" selected disabled>কোম্পানি যানবাহন সুবিধাঃ</option>
+                                    <option value="সম্পূর্ণ সময়">আছে</option>
+                                    <option value="সম্পূর্ণ সময়">নাই</option>
+                                </select>
+                            </div>
+
+                        <div class="col-md-12 form-group">
+                                    <label class="text-success">কোম্পানি খাবারের ব্যাবস্থাঃ</label>
+                                <select name="job_type" class="form-control">
+                                    <option value="" selected disabled>কোম্পানি খাবারের ব্যাবস্থাঃ</option>
+                                    <option value="সম্পূর্ণ সময়">আছে</option>
+                                    <option value="সম্পূর্ণ সময়">নাই</option>
+                                </select>
+                            </div>
+
+                        <div class="col-md-12 form-group">
+                                    <label class="text-success">কোম্পানি মোবাইল বিলঃ</label>
+                                <select name="job_type" class="form-control">
+                                    <option value="" selected disabled>ককোম্পানি মোবাইল বিলঃ</option>
+                                    <option value="সম্পূর্ণ সময়">আছে</option>
+                                    <option value="সম্পূর্ণ সময়">নাই</option>
+                                </select>
+                            </div>
+
+                        <div class="col-md-12 form-group">
+                                    <label class="text-success">কোম্পানি ফেস্টিভ্যাল বোনাসঃ</label>
+                                <select name="job_type" class="form-control">
+                                    <option value="" selected disabled>কোম্পানি ফেস্টিভ্যাল বোনাসঃ</option>
+                                    <option value="সম্পূর্ণ সময়">আছে</option>
+                                    <option value="সম্পূর্ণ সময়">নাই</option>
+                                </select>
+                            </div>
+
+                        <div class="col-md-12 form-group">
+                                    <label class="text-success">কোম্পানি কি প্রকারঃ</label>
+                                <select name="job_type" class="form-control">
+                                    <option value="" selected disabled>কোম্পানি কি প্রকারঃ</option>
+                                    <option value="সম্পূর্ণ সময়">ন্যাশনাল </option>
+                                    <option value="সম্পূর্ণ সময়">ইন্টারন্যাশনাল </option>
+                                </select>
+                            </div>
+
+                        <div class="col-md-12 form-group">
+                                    <label class="text-success">কোম্পানি বেতন ভাড়বেঃ </label>
+                                <select name="job_type" class="form-control">
+                                    <option value="" selected disabled>কোম্পানি বেতন ভাড়বেঃ </option>
+                                    <option value="সম্পূর্ণ সময়">৬ মাস</option>
+                                    <option value="সম্পূর্ণ সময়">১ বছর</option>
+                                    <option value="সম্পূর্ণ সময়">২ বছর</option>
+                                </select>
+                            </div>
+
+                        <div class="col-md-12 form-group">
+                            <label class="text-success">কোম্পানি ওভার টাইম সুবিধাঃ</label>
+                            <select name="job_type" class="form-control">
+                                <option value="" selected disabled>কোম্পানি ওভার টাইম সুবিধাঃ</option>
+                                <option value="সম্পূর্ণ সময়">আছে</option>
+                                <option value="সম্পূর্ণ সময়">নাই</option>
+                            </select>
+                        </div>
+
+
+
+
+
+                        <h3>আপনার  প্রতিষ্ঠান সম্পর্কে</h3><hr/>
+                            <div class="col-md-12 form-group">
+
+                                <label class="text-success">কোম্পানির নামঃ</label>
+                                <input type="text" name="company_name" class="form-control" placeholder="ম্পানির নামঃ">
+                                <span class="text-danger">{{$errors->has('company_name') ? $errors->first('company_name'):' '}}</span>
                             </div>
                             <div class="col-md-12 form-group">
-                                <h3>আপনার  প্রতিষ্ঠান সম্পর্কে</h3><hr/>
-                                <label></label>
-                                <input type="text" name="company_name" class="form-control" placeholder="কোম্পানি">
-                                <span class="text-danger">{{$errors->has('company_name') ? $errors->first('company_name'):' '}}</span>
+
+                                <label class="text-success">কোম্পানি কাজের বিবরনঃ</label>
+                            <textarea name="company_name" class="form-control"></textarea>
                             </div>
                             <div class="col-md-12 form-group">
                                 <div class="col-md-9" style="padding-left: 0">
@@ -168,12 +268,12 @@
                                 <div class="col-md-5"></div>
                             </div>
                             <div class="col-md-12 form-group">
-                                <h3>আবেদনকারীর গুরুত্বপূর্ণ</h3><hr/>
+                                <h3>আবেদনকারীর গুরুত্বপূর্ণ ইনফর্মেশন</h3><hr/>
                                 <div class="col-md-6" style="padding-left: 0">
-                                    <label></label>
+                                    <label class="text-success">শিক্ষাগত যোগ্যতা:</label>
                                     <select name="minimum_requirement" class="form-control">
-                                        <option value="">শিক্ষাগত যোগ্যতা  </option>
-                                        <option value="প্রাথমিক শিক্ষা">প্রাথমিক শিক্ষা</option>
+                                        <option value="">শিক্ষাগত যোগ্যতা </option>
+                                        <option value="">৫ম পাস</option>
                                         <option value="উচ্চ মাধ্যমিক শিক্ষা">উচ্চ মাধ্যমিক শিক্ষা</option>
                                         <option value="এসএসসি / ও লেভেল">এসএসসি / ও লেভেল</option>
                                         <option value="এইচএসসি / এ লেভেল">এইচএসসি / এ লেভেল</option>
@@ -184,13 +284,13 @@
                                     </select>
                                 </div>
                                 <div class="col-md-6" style="padding-right: 0">
-                                    <label></label>
-                                    <input type="number" name="experience"  class="form-control" placeholder=" অভিজ্ঞতা ">
+                                    <label class="text-success">আমার অভিজ্ঞতা</label>
+                                    <input type="number" name="experience"  class="form-control" placeholder="আমার অভিজ্ঞতা">
                                 </div>
                             </div>
                             <div class="col-md-12 form-group">
                                 <div class="col-md-6" style="padding-left: 0">
-                                    <label></label>
+                                    <label class="text-success">শিক্ষাগত অভিজ্ঞতা:</label>
                                     <select name="education_sector" class="form-control">
                                         <option value="">শিক্ষাগত অভিজ্ঞতা </option>
                                         <option value="হিসাবরক্ষণ">হিসাবরক্ষণ</option>
@@ -243,18 +343,70 @@
                                     </select>
                                 </div>
                             </div>
+
+
                             <div class="col-md-12 form-group">
-                                <label class="text-success">আপনার মোবাইল / ফোন নাম্বার </label>
-                                <input type="text" name="phone_number" class="form-control" placeholder="ফোন নাম্বার" value="{{$frontUser->phone_number}}">
-                                <span class="text-danger">{{$errors->has('phone_number') ? $errors->first('phone_number'):' '}}</span>
+                                <div class="col-md-6" style="padding-left: 0">
+                                    <label class="text-success">আবেদনকারীর বয়স :</label>
+                                    <input type="number" name="age_limit"  class="form-control" placeholder="১৮ থেকে ৬০ বছর">
+                                </div>
+                                <div class="col-md-6" style="padding-left: 0">
+                                    <label class="text-success">আপনার মোবাইল / ফোন নাম্বার </label>
+                                    <input type="text" name="phone_number" class="form-control" placeholder="ফোন নাম্বার" value="{{$frontUser->phone_number}}">
+                                    <span class="text-danger">{{$errors->has('phone_number') ? $errors->first('phone_number'):' '}}</span>
+                                </div>
                             </div>
-                        <button type="submit" class="btn btn-ad-post btn-lg">আপনার এই বিজ্ঞাপন পোস্ট করুন</button>
+
+                                <div class="col-md-12 form-group">
+                                    <div class="col-md-6" style="padding-left: 0">
+                                        <label class="text-success">কোন পদে আবেদন করছেনঃ</label>
+                                        <input type="text" name="age_limit"  class="form-control" placeholder="কোন পদে আবেদন করছেনঃ">
+                                    </div>
+                                    <div class="col-md-6" style="padding-right: 0">
+                                        <label class="text-success">কোন ট্রেনিং করছেনঃ</label>
+                                        <select name="gender" class="form-control">
+                                            <option value="" selected disabled>কোন ট্রেনিং করছেনঃ</option>
+                                            <option value="পুরুষ">আছে</option>
+                                            <option value="নারী">নাই</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                        <div class="col-md-12 form-group">
+                                    <div class="col-md-6" style="padding-right: 0">
+                                        <label class="text-success">কোন ওয়্যাকশপ করছেনঃ</label>
+                                        <select name="gender" class="form-control">
+                                            <option value="" selected disabled>কোন ওয়্যাকশপ করছেনঃ</option>
+                                            <option value="আছে">আছে</option>
+                                            <option value="নাই">নাই</option>
+                                        </select>
+                                    </div>
+
+                            <div class="col-md-6" style="padding-right: 0">
+                                        <label class="text-success">কম্পিউটার ট্রেনিং করছেনঃ</label>
+                                        <select name="gender" class="form-control">
+                                            <option value="" selected disabled>কম্পিউটার ট্রেনিং করছেনঃ</option>
+                                            <option value="আছে">আছে</option>
+                                            <option value="নাই">নাই</option>
+                                        </select>
+                             </div>
+                         </div>
+
+
+                        <div class="col-md-12 form-group">
+                                    <div class="col-md-6" style="padding-right: 0">
+                                        <label class="text-success">ভোটার আইডি নাম্বারঃ</label>
+                                        <input type="text" name="phone_number" class="form-control" placeholder="ফভোটার আইডি নাম্বারঃ" value="{{$frontUser->phone_number}}">
+                                    </div>
+                         </div>
+
+                        <button type="submit" class="btn btn-success btn-lg">আপনার এই বিজ্ঞাপন পোস্ট করুন</button>
                         {{Form::close()}}
                     </div>
                 </div>
                 <div class="col-md-4"></div>
             </div>
-            <i class="text-warning">ঘরেবসে.কম এ আপনি পোস্ট করতে হলে ঘরেবসে.কম এর নিয়ম অনুযায়ী পোস্ট করতে হবে।</i>
+            <i class="text-success">ঘরেবসে.কম এ আপনি পোস্ট করতে হলে ঘরেবসে.কম এর নিয়ম অনুযায়ী পোস্ট করতে হবে।</i>
         </div>
     </div>
     <div class="col-md-1"></div>

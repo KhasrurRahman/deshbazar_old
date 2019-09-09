@@ -6,9 +6,9 @@
 @section('body')
     <div class="row table-responsive">
         <div class="col-md-offset-2 col-md-8">
-            <div class="panel panel-default">
+            <div class="panel panel-default"  style="box-shadow: 5px 8px 12px;">
                 <div class="panel-heading">
-                    <h4 class="text-success text-center">View Ad</h4>
+                    <h4 class="text-success text-center">বিজ্ঞাপন দেখুন</h4>
                 </div>
                 <div class="panel-body">
                     <table class="table table-bordered">
@@ -36,19 +36,60 @@
                                 @endif
                             </td>
                         </tr>
+
+
+{{--                        for product--}}
+
+
                         @if(isset($ad->product_condition))
                         <tr>
                             <th>Ad Summary</th>
                             <td>
-                                Condition: {{$ad->product_condition}}<br />
-                                Brand: {{$ad->product_brand}}<br />
-                                Model: {{$ad->product_model}}<br />
-                                Reality: {{$ad->product_reality}}
+                                @if(isset($ad->product_condition))
+                                    কন্ডিশন: {{$ad->product_condition}}<br />
+                                @endif
+
+                                @if(isset($ad->product_brand))
+                                        ব্র্যান্ড: {{$ad->product_brand}}<br />
+                                @endif
+
+                                    @if(isset($ad->product_model))
+                                        মডেলডঃ: {{$ad->product_model}}<br />
+                                    @endif
+
+                                    @if(isset($ad->product_reality))
+                                        জেনুইন: {{$ad->product_reality}}<br>
+                                    @endif
+
+                                    @if(isset($ad->product_model_year_cc))
+                                        মডেল সাল ও সিসি: {{$ad->product_model_year_cc}}<br>
+                                    @endif
+
+                                    @if(isset($ad->nibondhon_year))
+                                        নিবন্ধন সাল: {{$ad->nibondhon_year}}<br>
+                                    @endif
+
+                                    @if(isset($ad->fuel))
+                                        কি তেলে চলে: {{$ad->fuel}}<br>
+                                    @endif
+
+                                    @if(isset($ad->km_ride))
+                                        আপনার যানবাহন কত কিলোমিটার চলচ্ছেঃ {{$ad->km_ride}}<br>
+                                    @endif
+
+                                    @if(isset($ad->servising))
+                                        আপনার গাড়ি এই যাবত কতবার সার্ভিস হয়েছে: {{$ad->servising}}<br>
+                                    @endif
+
+                                    @if(isset($ad->village_ord))
+                                        আপনার গ্রাম ও ওয়ার্ডঃ: {{$ad->village_ord}}<br>
+                                    @endif
+
                             </td>
                         </tr>
                         <tr>
                             <th>Ad Description</th>
-                            <td>{{$ad->product_description}}</td>
+                            <td>{!! $ad->product_description !!}</td>
                         </tr>
                         <tr>
                             <th>Product Price</th>
@@ -57,6 +98,12 @@
                                 {{$ad->product_price_check}}
                             </td>
                         </tr>
+
+
+{{--                            for job--}}
+
+
+
                         @elseif(isset($ad->job_type))
                             <tr>
                                 <th>কোম্পানি</th>
@@ -119,30 +166,47 @@
                                 <th>কাজের বিবরণ</th>
                                 <td>{{$ad->description}}</td>
                             </tr>
+
+
+
+
+
+{{--                            for property--}}
+
+
+
                         @else
                             <tr>
                                 <th>Ad Summary</th>
                                 <td>
                                     @if($ad->bed)
-                                        Bed: {{$ad->bed}}<br />
+                                        বেড রুম: {{$ad->bed}}<br />
                                     @endif
                                     @if($ad->bath)
-                                        Bath: {{$ad->bath}}<br />
+                                            বাথরুম: {{$ad->bath}}<br />
                                     @endif
                                     @if($ad->home_area)
-                                        Home Area: {{$ad->home_area}} {{$ad->home_area_unit}}<br />
+                                            ফ্লাট আয়তন: {{$ad->home_area}} {{$ad->home_area_unit}}<br />
                                     @endif
                                     @if($ad->land_area)
-                                        Land Area: {{$ad->land_area}} {{$ad->land_area_unit}}<br />
+                                            জমির আয়তন: {{$ad->land_area}} {{$ad->land_area_unit}}<br />
                                     @endif
                                     @if($ad->location_point)
                                         Place: {{$ad->location_point}}<br />
                                     @endif
+
+                                        @if($ad->palce_type)
+                                            আপনার জমি: {{$ad->palce_type}}<br />
+                                        @endif
+
+                                        @if($ad->village_word)
+                                            আপনার গ্রাম ও ওয়ার্ডঃ: {{$ad->village_word}}<br />
+                                        @endif
                                 </td>
                             </tr>
                             <tr>
-                                <th>Ad Description</th>
-                                <td>{{$ad->description}}</td>
+                                <th>বিবরণ:</th>
+                                <td> {!! $ad->description !!}</td>
                             </tr>
                             <tr>
                                 <th>Property Price</th>

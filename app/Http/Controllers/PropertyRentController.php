@@ -93,6 +93,8 @@ class PropertyRentController extends Controller
         $propertyDetail->property_price = $request->property_price;
         $propertyDetail->property_price_check = $request->property_price_check;
         $propertyDetail->location = $request->location;
+        $propertyDetail->village_word = $request->village_word;
+        $propertyDetail->palce_type = $request->palce_type;
         $propertyDetail->save();
 
 

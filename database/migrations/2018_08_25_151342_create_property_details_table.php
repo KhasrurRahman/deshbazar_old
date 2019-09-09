@@ -28,6 +28,8 @@ class CreatePropertyDetailsTable extends Migration
             $table->float('property_price',15,2);
             $table->string('property_price_check')->nullable();
             $table->string('location');
+            $table->string('village_word')->nullable();
+            $table->string('palce_type')->nullable();
             $table->string('publication_status')->default('Unpublished');
             $table->tinyInteger('top_ad')->default(0);
             $table->timestamps();

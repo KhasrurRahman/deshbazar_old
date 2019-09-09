@@ -705,3 +705,12 @@ Route::post('/merchant-callback',[
     'as'    => 'merchant-callback'
 ]);
 
+
+
+//chat
+Route::get('chat','chat\ChatControler@index')->name('chat');
+Route::get('chat/{id}','chat\ChatControler@chat_conversetion')->name('chat_conversetion');
+Route::get('chat_save/{product_id}','chat\ChatControler@chat_save')->name('chat_save');
+Route::get('chat_user_create/{product_id}/','chat\ChatControler@chat_user_create')->name('chat_user_create');
+
+

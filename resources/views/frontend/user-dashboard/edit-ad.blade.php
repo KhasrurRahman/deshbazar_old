@@ -5,23 +5,26 @@
 
 @section('body')
     <div class="row table-responsive">
-        <div class="col-md-offset-2 col-md-8">
-            <div class="panel panel-default">
+        <div class="col-md-offset-2 col-md-8" >
+            <div class="panel panel-default" >
                 <div class="panel-heading">
-                    <h4 class="text-success text-center">Edit Ad</h4>
+                    <h4 class="text-success text-center">বিজ্ঞাপন সম্পাদনা করুন</h4>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body"  style="box-shadow: 5px 8px 12px;">
+
+{{--                    only product--}}
+
                     @if(isset($ad->product_condition))
                         {{Form::open(['route'=>'update-product-ad','method'=>'POST','class'=>'form-horizontal','enctype'=>'multipart/form-data'])}}
                         <div class="form-group">
-                            <label class="control-label col-md-4">বিজ্ঞাপন শিরোনাম</label>
+                            <label class="control-label col-md-4 text-success">বিজ্ঞাপন শিরোনাম</label>
                             <div class="col-md-8">
                                 <input type="text" value="{{$ad->ad_title}}" name="ad_title" class="form-control"/>
                                 <input type="hidden" value="{{$ad->id}}" name="product_id" class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">১ম ছবি</label>
+                            <label class="control-label col-md-4 text-success">১ম ছবি</label>
                             <div class="col-md-8">
                                 <input type="file" name="product_image1" accept="image/*"/>
                                 <br />
@@ -29,7 +32,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">২য় ছবি</label>
+                            <label class="control-label col-md-4 text-success">২য় ছবি</label>
                             <div class="col-md-8">
                                 <input type="file" name="product_image2" accept="image/*"/>
                                 <br />
@@ -37,7 +40,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">৩য় ছবি</label>
+                            <label class="control-label col-md-4 text-success">৩য় ছবি</label>
                             <div class="col-md-8">
                                 <input type="file" name="product_image3" accept="image/*"/>
                                 <br />
@@ -45,40 +48,92 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">কন্ডিশন</label>
+                            <label class="control-label col-md-4 text-success">কন্ডিশন</label>
                             <div class="col-md-8 radio">
                                 <label><input type="radio" name="product_condition" value="ব্যবহৃত" {{$ad->product_condition == "ব্যবহৃত" ? 'checked':''}}/>ব্যবহৃত</label>
                                 <label><input type="radio" name="product_condition" value="নতুন" {{$ad->product_condition == "নতুন" ? 'checked':''}}/>নতুন</label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">ব্র্যান্ড</label>
+                            <label class="control-label col-md-4 text-success">ব্র্যান্ড</label>
                             <div class="col-md-8">
                                 <input type="text" value="{{$ad->product_brand}}" name="product_brand" class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">মডেল</label>
+                            <label class="control-label col-md-4 text-success">মডেল</label>
                             <div class="col-md-8">
                                 <input type="text" value="{{$ad->product_model}}" name="product_model" class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">জেনুইন</label>
+                            <label class="control-label col-md-4 text-success">মডেল সাল ও সিসিঃ</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="product_model_year_cc"value="{{$ad->product_model_year_cc}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4 text-success">নিবন্ধন সালঃ</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="product_publish_year" value="{{$ad->nibondhon_year}}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-4 text-success">নআপনার যানবাহন কত কিলোমিটার চলচ্ছেঃ</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="product_km_ride" value="{{$ad->km_ride}}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-4 text-success">আপনার গাড়ি এই যাবত কতবার সার্ভিস হয়েছেঃ</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="product_servising_time" value="{{$ad->servising}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4 text-success">আপনার উপজেলা</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="location" value="{{$ad->location}}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-4 text-success">আপনার গ্রাম ও ওয়ার্ডঃ</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="product_village_word" value="{{$ad->village_ord}}">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4 text-success">জেনুইন</label>
                             <div class="col-md-8 radio">
                                 <label><input type="radio" name="product_reality" value="আসল" {{$ad->product_reality == "আসল" ? 'checked':''}}/>আসল</label>
                                 <label><input type="radio" name="product_reality" value="রেপ্লিকা/ক্লোন" {{$ad->product_reality == "রেপ্লিকা/ক্লোন" ? 'checked':''}}/>রেপ্লিকা/ক্লোন</label>
                             </div>
                         </div>
+
                         <div class="form-group">
-                            <label class="control-label col-md-4">মূল্য (৳)</label>
+                            <label class="text-success control-label col-md-4">কি তেলে চলেঃ </label><br>
+                            <div class="col-md-8">
+                                <label><input type="radio" name="product_oil" value="পেট্রল"{{$ad->fuel == "পেট্রল" ? 'checked':''}} />পেট্রল</label>
+                                <label><input type="radio" name="product_oil" value="ডিজেল" {{$ad->fuel == "ডিজেল" ? 'checked':''}}/>ডিজেল</label>
+                                <label><input type="radio" name="product_oil" value="অকটেন" {{$ad->fuel == "অকটেন" ? 'checked':''}}/>অকটেন </label>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4 text-success">মূল্য (৳)</label>
                             <div class="col-md-8">
                                 <input type="number" value="{{$ad->product_price}}" name="product_price" class="form-control"/>
                                 <input type="checkbox" name="product_price_check" value="আলোচনা সাপেক্ষে" {{$ad->product_price_check == "আলোচনা সাপেক্ষে" ? 'checked':''}} style="margin-top: 15px"> আলোচনা সাপেক্ষে
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">বিবরণ</label>
+                            <label class="control-label col-md-4 text-success">বিবরণ</label>
                             <div class="col-md-8">
                                 <textarea name="product_description" id="editor" class="form-control">{{$ad->product_description}}</textarea>
                             </div>
@@ -90,6 +145,24 @@
                             </div>
                         </div>
                         {{Form::close()}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{--                        //for job--}}
+
+
+
+
                     @elseif(isset($ad->job_type))
                         {{Form::open(['route'=>'update-job-ad','method'=>'POST','class'=>'form-horizontal','enctype'=>'multipart/form-data'])}}
                         <div class="form-group">
@@ -326,17 +399,23 @@
                             </div>
                         </div>
                         {{Form::close()}}
+
+
+
+{{--                        //for property--}}
+
+
                     @else
                         {{Form::open(['route'=>'update-property-ad','method'=>'POST','class'=>'form-horizontal','enctype'=>'multipart/form-data'])}}
                         <div class="form-group">
-                            <label class="control-label col-md-4">বিজ্ঞাপন শিরোনাম</label>
+                            <label class="control-label col-md-4 text-success">বিজ্ঞাপন শিরোনাম</label>
                             <div class="col-md-8">
                                 <input type="text" value="{{$ad->ad_title}}" name="ad_title" class="form-control"/>
                                 <input type="hidden" value="{{$ad->id}}" name="property_id" class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">১ম ছবি</label>
+                            <label class="control-label col-md-4 text-success">১ম ছবি</label>
                             <div class="col-md-8">
                                 <input type="file" name="product_image1" accept="image/*"/>
                                 <br />
@@ -344,7 +423,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">২য় ছবি</label>
+                            <label class="control-label col-md-4 text-success">২য় ছবি</label>
                             <div class="col-md-8">
                                 <input type="file" name="product_image2" accept="image/*"/>
                                 <br />
@@ -352,7 +431,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">৩য় ছবি</label>
+                            <label class="control-label col-md-4 text-success">৩য় ছবি</label>
                             <div class="col-md-8">
                                 <input type="file" name="product_image3" accept="image/*"/>
                                 <br />
@@ -360,7 +439,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">বেড</label>
+                            <label class="control-label col-md-4 text-success">বেড</label>
                             <div class="col-md-8">
                                 <select class="form-control" name="bed">
                                     <option value="{{$ad->bed}}">{{$ad->bed}}</option>
@@ -379,7 +458,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">বাথ</label>
+                            <label class="control-label col-md-4 text-success">বাথ</label>
                             <div class="col-md-8">
                                 <select class="form-control" name="bath">
                                     <option value="{{$ad->bath}}">{{$ad->bath}}</option>
@@ -398,7 +477,7 @@
                             </div>
                         </div>
                         <div class="form-group" >
-                            <label class="control-label col-md-4">ফ্ল্যাট / বাড়ির আয়তন</label>
+                            <label class="control-label col-md-4 text-success">ফ্ল্যাট / বাড়ির আয়তন</label>
                             <div class="col-md-8">
                                 <div class="col-md-7" style="padding: 0">
                                     <input  class="form-control" name="home_area" value="{{$ad->home_area}}" type="number" >
@@ -415,8 +494,9 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="form-group" >
-                            <label class="control-label col-md-4">জমির আয়তন </label>
+                            <label class="control-label col-md-4 text-success">জমির আয়তন </label>
                             <div class="col-md-8">
                                 <div class="col-md-7" style="padding: 0">
                                     <input  class="form-control" name="land_area" value="{{$ad->land_area}}" type="number" >
@@ -434,21 +514,48 @@
                                 </div>
                             </div>
                         </div>
+
+
+                            <div class="form-group">
+                                <label class="control-label col-md-4 text-success">আপনার জমি  </label>
+
+                                <div class="col-md-8">
+                                    <label><input type="radio" name="palce_type" value="কৃষি" value="পেট্রল" {{$ad->palce_type == "কৃষি" ? 'checked':''}}/>কৃষি</label>
+
+                                    <label><input type="radio" name="palce_type" value="ররবাণিজ্যিক" {{$ad->palce_type == "রবাণিজ্যিক" ? 'checked':''}} />রবাণিজ্যিক</label>
+
+                                    <label><input type="radio" name="palce_type" value="আবাসিক" {{$ad->palce_type == "আবাসিক" ? 'checked':''}}/>আবাসিক</label>
+
+                                    <label><input type="radio" name="palce_type" value="রাস্তার পার্শে" {{$ad->palce_type == "রাস্তার পার্শে" ? 'checked':''}}/>রাস্তার পার্শে</label>
+                                </div>
+
+                            </div>
+
+
                         <div class="form-group">
-                            <label class="control-label col-md-4">ঠিকানা</label>
+                            <label class="control-label col-md-4 text-success">ঠিকানা</label>
                             <div class="col-md-8">
                                 <input type="text" value="{{$ad->location_point}}" name="location_point" class="form-control"/>
                             </div>
                         </div>
+
                         <div class="form-group">
-                            <label class="control-label col-md-4">মূল্য (৳)</label>
+                            <label class="control-label col-md-4 text-success">আপনার গ্রাম ও ওয়ার্ডঃ</label>
+                            <div class="col-md-8">
+                                <input type="text" name="village_word" class="form-control" value="{{$ad->village_word}}">
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4 text-success">মূল্য (৳)</label>
                             <div class="col-md-8">
                                 <input type="number" value="{{$ad->property_price}}" name="property_price" class="form-control"/>
                                 <input type="checkbox" name="property_price_check" value="আলোচনা সাপেক্ষে" {{$ad->property_price_check == "আলোচনা সাপেক্ষে" ? 'checked':''}} style="margin-top: 15px"> আলোচনা সাপেক্ষে
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">বিবরণ</label>
+                            <label class="control-label col-md-4 text-success">বিবরণ</label>
                             <div class="col-md-8">
                                 <textarea name="description" id="editor" class="form-control">{{$ad->description}}</textarea>
                             </div>

@@ -139,6 +139,8 @@ class ManagePropertyController extends Controller
         $propertyDetail->description = $request->description;
         $propertyDetail->property_price = $request->property_price;
         $propertyDetail->property_price_check = $request->property_price_check;
+        $propertyDetail->village_word = $request->village_word;
+        $propertyDetail->palce_type = $request->palce_type;
         $propertyDetail->save();
 
         $userid = Session::get('frontUserId');

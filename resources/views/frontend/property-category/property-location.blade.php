@@ -7,7 +7,7 @@
 
     <div class="container" id="location">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1  panel panel-default">
+            <div class="col-md-10 col-md-offset-1  panel panel-default" style="box-shadow: 5px 8px 12px;">
                 <div class="panel-body">
                     <h3>আপনার আইটেম বা সার্ভিসটি কোথায় অবস্থিত?</h3><hr/>
                     <div class="col-md-3">

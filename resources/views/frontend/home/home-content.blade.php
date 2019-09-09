@@ -66,7 +66,7 @@
     margin-left: 5px;
     height: 36px;
     width: 86px;
-    border: 1px solid red;
+    border: 1px solid  #5a00ff;;
     text-align: center;
     background: #a5cd4f;
     border-radius: 14%;

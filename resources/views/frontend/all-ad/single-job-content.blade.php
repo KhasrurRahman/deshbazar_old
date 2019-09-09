@@ -123,7 +123,7 @@
                         <a href="#"><h3><i class="fa fa-phone"></i> {{$job->phone_number}}</h3></a><hr/>
                         <a href="#">
                             <img src="{{asset('/') }}front/images/cat.png" alt=""/>
-                            চ্যাট</a><hr/>
+                            ম্যাসেজ/চ্যাট করুন</a><hr/>
                         <a href="{{route('promote-ad',['id'=>$job->id,'infoId'=>$job->information_id])}}" class="btn btn-ad-post btn-block text-danger">আপনার মূল্যবান বিজ্ঞাপন প্রচার করুন।</a>
                         <hr />
                         <h4>বিজ্ঞাপনটি শেয়ার করুন</h4>

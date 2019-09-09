@@ -6,9 +6,9 @@
 @section('body')
     <div class="container" id="category">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1  panel panel-default">
+            <div class="col-md-10 col-md-offset-1  panel panel-default" style="box-shadow: 5px 8px 12px;">
                 <div class="panel-body">
-                    <h3>ভাড়ার জন্য কোন প্রপার্টি প্রস্তাব করুন</h3><hr/>
+                    <h4>আপনি কি জমি,বাড়ী,ফ্লাট বিক্রি ও ভাড়ার জন্য বিজ্ঞাপন দিতে চান? এখনি আপনার বিজ্ঞাপন পোস্ট করুন</h4><hr/>
 
                     <div class="col-md-5">
                         <h3>নিচের আইটেম ক্লিক করুন</h3>

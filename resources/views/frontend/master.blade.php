@@ -170,58 +170,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </div>
 
 <!--        login modal end here-->
-<!-- Developed By Md. Jamal Uddin ( http://jamaluddin.info ) -->
-<!--        chat modal start here-->
-<div class="modal fade" id="chat_modal">
-    <div class="modal-dialog">
-        <div class="text-right">
-            <i class="fa fa-close" data-dismiss="modal"></i>
-        </div>
-        <div class="col-md-12 col-sm-12  col-xs-12 modal-content">
-
-            <div class="col-md-6 col-sm-6 col-xs-6 left_containte">
-                <h4>নিজের চ্যাট দেখুন </h4>
-                <p>আপনি আপনার ম্যাসেজ দেখতে চাইলে লগইন করুন। আপনার কতগুলো চ্যাট আছে তা দেখতে শুরু করুন । </p>
-                <ul class="mb">
-                    <li>আপনার বিজ্ঞাপন এর কতগুলো ম্যাসেজ আছে তা দেখুন।</li>
-                    <li>আপনার বিজ্ঞাপনগুলো আপনার পেজবুক আইডিতে শেয়ার করুন।</li>
-                    <li>ঘরেবসে.কম এর সাথে থাকুন।</li>
-                    <li>আপনি কিভাবে ম্যাসেজ এর মাধ্যমে,আপনার ক্রেতার সাথে তথ্য আদান প্রদান করতে পারেন। </li>
-                    <li>আপনি যেখানে থাকেন না কেনো, চ্যাট এর মাধ্যমে ক্রেতার চাহিদা জানতে পারেন । </li>
-                </ul>
-            </div>
-
-            <div class="col-md-6 col-sm-6 col-xs-6 right_form">
-                {{Form::open(['route'=>'front-user-login','method'=>'POST','class'=>'form'])}}
-                <div class="col-lg-12 form-group">
-                    <a href="{{url('/redirect')}}" class="btn btn-primary btn-block"><i class="fa fa-facebook-official"></i>ফেসবুক এর সাথে চলুন</a>
-                </div>
-                <div class="col-lg-12 form-group">
-                    <a href="{{url('/redirect')}}" class="btn btn-primary btn-block" style="background: #d94f45"><i class="fa fa-envelope-open"></i>   ইমেইল এর সাথে চলুক</a>
-                </div>
-                <div class="col-lg-12 form-group">
-                    <input type="email" name="email" class="form-control" placeholder="ইমেইল" required >
-                </div>
-                <div class="col-lg-12 form-group">
-                    <input type="password" name="password" class="form-control" placeholder="পাসওয়ার্ড" required>
-                </div>
-                <div class="col-lg-12 form-group">
-                    <button type="submit" name="btn" class="btn btn-success btn-block"> লগ ইন</button>
-                </div>
-
-                <div class="text-center"><a>পাসওয়ার্ড ভুলে গেছেন?</a></div>
-                {{Form::close()}}
-                <hr/>
-                <div class="text-center">
-                    <h5>আপনার ঘরেবসে.কম এ অ্যাকাউন্ট আছে কি? না? নিছের সাইনআপ বাটোন এ ক্লিক করুন ।</h5>
-                    <a href="{{route('signup-options')}}"  class="btn btn-default" style="background: #5cb85c;color: white">সাইন আপ করুন </a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-<!--       chat modal end here-->
 
 <!--       complain modal start here-->
 <div class="modal fade" id="complain_modal">
@@ -255,6 +203,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
     </div>
 </div>
 <!--       complain modal end here-->
+
+
+
+
 
 <!--  location_modal   modal start here-->
 @include('frontend.includes.location-modal')
@@ -299,10 +251,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
         });
     });
 </script>
-
-
-
-
 
 
 

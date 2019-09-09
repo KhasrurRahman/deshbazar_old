@@ -87,52 +87,80 @@
                     <p>{{Carbon\Carbon::parse($property->updated_at)->format("F j, Y, g:i A")}}, {{$property->location}}, {{$property->district_name}}</p>
                     <hr/>
                     <table class="table">
-                        <tr>
+                        <tr class="warning">
                             <th>মূল্য (৳)</th>
                             <td>{{$property->property_price}} <br />{{$property->property_price_check}}</td>
                         </tr>
                         @if($property->bed)
-                            <tr>
+                            <tr class="success">
                                 <th>বেড</th>
                                 <td>{{$property->bed}}</td>
                             </tr>
                         @endif
                         @if($property->bath)
-                            <tr>
+                            <tr class="info">
                                 <th>বাথ</th>
                                 <td>{{$property->bath}}</td>
                             </tr>
                         @endif
                         @if($property->home_area)
-                            <tr>
+                            <tr class="danger">
                                 <th>ফ্ল্যাট / বাড়ির আয়তন</th>
                                 <td>{{$property->home_area}}  {{$property->home_area_unit}}  </td>
                             </tr>
                         @endif
                         @if($property->land_area)
-                            <tr>
+                            <tr class="info">
                                 <th>জমির আয়তন</th>
                                 <td>{{$property->land_area}}  {{$property->land_area_unit}}  </td>
                             </tr>
                         @endif
+
+                        @if($property->palce_type)
+                            <tr class="success">
+                                <th>জমির ধরন</th>
+                                <td>{{$property->palce_type}}</td>
+                            </tr>
+                        @endif
                         @if($property->location_point)
-                            <tr>
+                            <tr class="info">
                                 <th>ঠিকানা</th>
                                 <td>{{$property->location_point}}</td>
+                            </tr>
+                        @endif
+                        @if($property->village_word)
+                            <tr class="warning">
+                                <th>গ্রাম ও ওয়ার্ড</th>
+                                <td>{{$property->village_word}}</td>
                             </tr>
                         @endif
                     </table>
 
                     <hr/>
                     <h3>যোগাযোগ করুন</h3>
-                    <a href="#"><h3><i class="fa fa-phone"></i> {{$property->phone_number}}</h3></a><hr/>
-                    <a href="#">
-                        <img src="{{asset('/') }}front/images/cat.png" alt=""/>
-                        চ্যাট</a><hr/>
-                    {{--<h3>এই সদস্যর বিজ্ঞাপন ভিজিট করুন।</h3><hr/>--}}
-                    {{--<a href="#"><h4>JONH IPS( Munna AD)</h4></a>--}}
-                    {{--<p>JONH IPS & UPS আপনার নির্ভরযোগ্য বন্ধু</p><hr/>--}}
-                    <a href="{{route('promote-ad',['id'=>$property->id,'infoId'=>$property->information_id])}}" class="btn btn-ad-post btn-block text-danger">আপনার মূল্যবান বিজ্ঞাপন প্রচার করুন।</a>
+                    <table class="table">
+                        <tr class="bg-success">
+                            <th><h3><i class="fa fa-phone"></i></h3></th>
+                            <th><h3>{{$property->phone_number}}</h3></th>
+                        </tr>
+                        <tr class="bg-danger">
+                            <th><h3><a href="#"><i class="fa fa-comment"></i></a></h3></th>
+                            @if(Session::get('frontUserId'))
+                                <th><a href="#chat" data-toggle="modal"><h3>ম্যাসেজ/চ্যাট করুন</h3></a></th>
+                            @else
+                                <th><a href="{{route('signup-options')}}" data-toggle="modal"><h3>ম্যাসেজ/চ্যাট করুন</h3></a></th>
+                            @endif
+                        </tr>
+                    </table>
+
+
+
+
+
+
+
+
+                    <a href="{{route('promote-ad',['id'=>$property->id,'infoId'=>$property->information_id])}}" class="btn btn-success btn-block text-danger">আপনার বিশেষভাবে আকর্ষণীয় করুন</a>
                     <hr />
                     <h4>বিজ্ঞাপনটি শেয়ার করুন</h4>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=ghoreyboshe.com/single-property-view/{{$property->id}}" target="_blank" class="share-icon facebook">
@@ -152,7 +180,31 @@
 
     <!--        products details end-->
 
+    <div class="container">
+        <div class="col-sm-12 col-lg-8 col-md-12  ">
+            <h3>যোগাযোগ করুন</h3>
+            <table class="table">
+                <tr class="active">
+                    <th scope="col"><h3><i class="fa fa-phone"></i></h3></th>
+                    <th scope="col"><h3>{{$property->phone_number}}</h3></th>
+                </tr>
+                <tr class="active">
+                <tr class="bg-danger">
+                    <th><h3><a href="#"><i class="fa fa-comment"></i></a></h3></th>
+                    @if(Session::get('frontUserId'))
+                        <th><a href="#chat" data-toggle="modal"><h3>ম্যাসেজ/চ্যাট করুন</h3></a></th>
+                    @else
+                        <th><a href="{{route('signup-options')}}" data-toggle="modal"><h3>ম্যাসেজ/চ্যাট করুন</h3></a></th>
+                    @endif
+                </tr>
+                </tr>
+            </table>
+        </div>
 
+        <div class="col-sm-12 col-lg-4 col-md-12">
+            <img src="{{asset('/') }}front/images/ResizerImage336X280.jpg" class="img-fluid img-thumbnail">
+        </div>
+    </div>
 
     <!--        related products start-->
 

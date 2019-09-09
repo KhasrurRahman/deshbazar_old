@@ -41,25 +41,33 @@
                             <th>Property Summary</th>
                             <td>
                                 @if($property->bed)
-                                Bed: {{$property->bed}}<br />
+                                    বেড রুম: {{$property->bed}}<br />
                                 @endif
                                 @if($property->bath)
-                                Bath: {{$property->bath}}<br />
+                                    বাথরুম: {{$property->bath}}<br />
                                 @endif
                                 @if($property->home_area)
-                                Home Area: {{$property->home_area}} {{$property->home_area_unit}}<br />
+                                    ফ্লাট আয়তন: {{$property->home_area}} {{$property->home_area_unit}}<br />
                                 @endif
                                 @if($property->land_area)
-                                Land Area: {{$property->land_area}} {{$property->land_area_unit}}<br />
+                                    জমির আয়তন: {{$property->land_area}} {{$property->land_area_unit}}<br />
                                 @endif
                                 @if($property->location_point)
-                                Place: {{$property->location_point}}<br />
+                                    Place: {{$property->location_point}}<br />
+                                @endif
+
+                                @if($property->palce_type)
+                                    আপনার জমি: {{$property->palce_type}}<br />
+                                @endif
+
+                                @if($property->village_word)
+                                    আপনার গ্রাম ও ওয়ার্ডঃ: {{$property->village_word}}<br />
                                 @endif
                             </td>
                         </tr>
                         <tr>
                             <th>Property Description</th>
-                            <td>{{$property->description}}</td>
+                            <td>{!! $property->description !!}</td>
                         </tr>
                         <tr>
                             <th>Property Price</th>

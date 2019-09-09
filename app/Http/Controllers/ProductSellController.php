@@ -97,6 +97,13 @@ class ProductSellController extends Controller
         $productDetail->product_price = $request->product_price;
         $productDetail->product_price_check = $request->product_price_check;
         $productDetail->location = $request->location;
+
+        $productDetail->product_model_year_cc = $request->product_model_year_cc;
+        $productDetail->nibondhon_year = $request->product_publish_year;
+        $productDetail->fuel = $request->product_oil;
+        $productDetail->km_ride = $request->product_km_ride;
+        $productDetail->servising = $request->product_servising_time;
+        $productDetail->village_ord = $request->product_village_word;
         $productDetail->save();
 
 
