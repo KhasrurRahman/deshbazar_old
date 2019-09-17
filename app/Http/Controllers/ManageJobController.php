@@ -107,6 +107,27 @@ class ManageJobController extends Controller
         $jobDetail->skill = $request->skill;
         $jobDetail->age_limit = $request->age_limit;
         $jobDetail->gender = $request->gender;
+
+
+        $jobDetail->candidate_age = $request->candidate_age;
+        $jobDetail->job_location = $request->job_location;
+        $jobDetail->company_facility = $request->company_facility;
+        $jobDetail->company_facility = $request->company_facility;
+        $jobDetail->company_transport_facility = $request->company_transport_facility;
+        $jobDetail->company_food_facility = $request->company_food_facility;
+        $jobDetail->company_mobile_bill = $request->company_mobile_bill;
+        $jobDetail->company_fastival_bonus = $request->company_fastival_bonus;
+        $jobDetail->company_fee_plan = $request->company_fee_plan;
+        $jobDetail->company_bill_incrase = $request->company_bill_incrase;
+        $jobDetail->company_full_time = $request->company_full_time;
+        $jobDetail->company_place_type = $request->company_place_type;
+        $jobDetail->any_training_expairance = $request->any_training_expairance;
+        $jobDetail->any_workshop_experience = $request->any_workshop_experience;
+        $jobDetail->any_computer_training_experience = $request->any_computer_training_experience;
+        $jobDetail->voter_id_number = $request->voter_id_number;
+        $jobDetail->company_work_description = $request->company_work_description;
+
+
         $jobDetail->save();
 
         $userid = Session::get('frontUserId');

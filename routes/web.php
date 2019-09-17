@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\App;
+
 Route::get('/', [
     'uses' => 'MarketplaceController@index',
     'as' => '/'
@@ -707,6 +709,7 @@ Route::post('/merchant-callback',[
 
 
 
+
 //chat
 Route::get('chat','chat\ChatControler@index')->name('chat');
 Route::get('chat/{id}','chat\ChatControler@chat_conversetion')->name('chat_conversetion');
@@ -714,3 +717,43 @@ Route::get('chat_save/{product_id}','chat\ChatControler@chat_save')->name('chat_
 Route::get('chat_user_create/{product_id}/','chat\ChatControler@chat_user_create')->name('chat_user_create');
 
 
+//admin chat route
+Route::get('all_chat','AdminChatController@all_chat')->name('all_chat');
+Route::get('all_chat_conversation/{id}','AdminChatController@all_chat_conversation')->name('all_chat_conversation');
+
+//footer menu
+Route::get('jana_ojana','Footer\FooterController@jana_ojana')->name('jana_ojana');
+Route::post('jana_ojana_save','Footer\FooterController@jana_ojana_save')->name('jana_ojana_save');
+
+Route::get('ad_rules','Footer\FooterController@ad_rules')->name('ad_rules');
+Route::post('ad_rules_save','Footer\FooterController@ad_rules_save')->name('ad_rules_save');
+
+Route::get('payment_information','Footer\FooterController@payment_information')->name('payment_information');
+Route::post('payment_information_save','Footer\FooterController@payment_information_save')->name('payment_information_save');
+
+Route::get('customer_deal','Footer\FooterController@customer_deal')->name('customer_deal');
+Route::post('customer_deal_save','Footer\FooterController@customer_deal_save')->name('customer_deal_save');
+
+Route::get('fast_sell','Footer\FooterController@fast_sell')->name('fast_sell');
+Route::post('fast_sell_save','Footer\FooterController@fast_sell_save')->name('fast_sell_save');
+
+Route::get('admin_terms','Footer\FooterController@terms')->name('admin_terms');
+Route::post('terms_save','Footer\FooterController@terms_save')->name('terms_save');
+
+Route::get('admin_delivery','Footer\FooterController@admin_delivery')->name('admin_delivery');
+Route::post('admin_delivery_save','Footer\FooterController@admin_delivery_save')->name('admin_delivery_save');
+
+Route::get('admin_membership','Footer\FooterController@admin_membership')->name('admin_membership');
+Route::post('admin_membership_save','Footer\FooterController@admin_membership_save')->name('admin_membership_save');
+
+Route::get('admin_about_us','Footer\FooterController@admin_about_us')->name('admin_about_us');
+Route::post('admin_about_us_save','Footer\FooterController@admin_about_us_save')->name('admin_about_us_save');
+
+Route::get('business_demand','Footer\FooterController@business_demand')->name('business_demand');
+Route::post('business_demand_save','Footer\FooterController@business_demand_save')->name('business_demand_save');
+
+Route::get('secret_terms','Footer\FooterController@secret_terms')->name('secret_terms');
+Route::post('secret_terms_save','Footer\FooterController@secret_terms_save')->name('secret_terms_save');
+
+Route::get('ghoreyboshe_career','Footer\FooterController@ghoreyboshe_career')->name('ghoreyboshe_career');
+Route::post('ghoreyboshe_career_save','Footer\FooterController@ghoreyboshe_career_save')->name('ghoreyboshe_career_save');

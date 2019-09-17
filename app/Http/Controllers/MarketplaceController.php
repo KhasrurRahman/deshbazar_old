@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\BannerAd;
 use App\FamilyMember;
+use App\footer;
+use App\footer2;
 use App\JobDetail;
 use App\ProductCategory;
 use App\ProductDetail;
@@ -102,40 +104,52 @@ class MarketplaceController extends Controller
         return view('frontend.home.ghoreyboshe-family',['members'=>$members]);
     }
     public function fastSell(){
-        return view('frontend.home.fast-sell');
+        $footer = footer::all()->first()->fast_sell;
+        return view('frontend.home.fast-sell',compact('footer'));
     }
 
     public function membership(){
-        return view('frontend.home.membership');
+        $footer = footer::all()->first()->membership;
+        return view('frontend.home.membership',compact('footer'));
     }
     public function quesAns(){
-        return view('frontend.home.ques-ans');
+        $footer = footer::all()->first()->jana_ojana;
+        return view('frontend.home.ques-ans',compact('footer'));
     }
     public function aboutUs(){
-        return view('frontend.home.about-us');
+        $footer = footer::all()->first()->about_us;
+        return view('frontend.home.about-us',compact('footer'));
     }
     public function secretTerms(){
-        return view('frontend.home.secret-terms');
+        $footer = footer::all()->first()->secret_terms;
+        return view('frontend.home.secret-terms',compact('footer'));
     }
     public function adRules(){
-        return view('frontend.home.ad-rules');
+        $footer = footer::all()->first()->ad_rules;
+        return view('frontend.home.ad-rules',compact('footer'));
     }
     public function paymentInformation(){
-        return view('frontend.home.payment-information');
+        $footer = footer::all()->first()->payment_information;
+        return view('frontend.home.payment-information',compact('footer'));
     }
     public function customerDeal(){
-        return view('frontend.home.customer-deal');
+        $footer = footer::all()->first()->customer_deal;
+        return view('frontend.home.customer-deal',compact('footer'));
     }
     public function terms(){
-        return view('frontend.home.terms');
+        $footer = footer::all()->first()->terms;
+        return view('frontend.home.terms',compact('footer'));
     }
     public function delivery(){
-        return view('frontend.home.delivery');
+        $footer = footer::all()->first()->delivery;
+        return view('frontend.home.delivery',compact('footer'));
     }
     public function businessDemand(){
-        return view('frontend.home.business-demand');
+        $footer = footer::all()->first()->business_demand;
+        return view('frontend.home.business-demand',compact('footer'));
     }
     public function ghoreybosheCareer(){
+        $footer = footer2::all()->first()->ghoreyboshe_career;
         return view('frontend.home.ghoreyboshe-career');
     }
 

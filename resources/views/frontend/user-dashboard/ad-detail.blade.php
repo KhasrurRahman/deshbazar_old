@@ -6,11 +6,11 @@
 @section('body')
     <div class="row table-responsive">
         <div class="col-md-offset-2 col-md-8">
-            <div class="panel panel-default"  style="box-shadow: 5px 8px 12px;">
+            <div class="panel panel-default"  >
                 <div class="panel-heading">
                     <h4 class="text-success text-center">বিজ্ঞাপন দেখুন</h4>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body" style="box-shadow: 5px 8px 12px;">
                     <table class="table table-bordered">
                         <tr>
                             <th>Ad Title</th>
@@ -164,7 +164,55 @@
                             </tr>
                             <tr>
                                 <th>কাজের বিবরণ</th>
-                                <td>{{$ad->description}}</td>
+                                <td>{!! $ad->description !!}</td>
+                            </tr>
+
+
+
+{{--                            --------------}}
+                            <tr>
+                                <th>আবেদনকারীর বয়স:</th>
+                                <td>{{$ad->candidate_age}}</td>
+                            </tr>
+                            <tr>
+                                <th>জব লোকেশনঃ</th>
+                                <td>{{$ad->job_location}}</td>
+                            </tr>
+                            <tr>
+                                <th>কোম্পানি সুযোগ সুবিধাঃ</th>
+                                <td>{{$ad->company_facility}}</td>
+                            </tr>
+                            <tr>
+                                <th>ককোম্পানি যানবাহন সুবিধাঃ</th>
+                                <td>{{$ad->company_transport_facility}}</td>
+                            </tr>
+                            <tr>
+                                <th>কোম্পানি খাবারের ব্যাবস্থাঃ</th>
+                                <td>{{$ad->company_food_facility}}</td>
+                            </tr>
+                            <tr>
+                                <th>কোম্পানি মোবাইল বিলঃ</th>
+                                <td>{{$ad->company_mobile_bill}}</td>
+                            </tr>
+                            <tr>
+                                <th>কোম্পানি ফেস্টিভ্যাল বোনাসঃ</th>
+                                <td>{{$ad->company_fastival_bonus}}</td>
+                            </tr>
+                            <tr>
+                                <th>কোম্পানি কি প্রকারঃ</th>
+                                <td>{{$ad->company_fee_plan}}</td>
+                            </tr>
+                            <tr>
+                                <th>কোম্পানি বেতন ভাড়বেঃ</th>
+                                <td>{{$ad->company_bill_incrase}}</td>
+                            </tr>
+                            <tr>
+                                <th>কোম্পানি ওভার টাইম সুবিধাঃ</th>
+                                <td>{{$ad->company_full_time}}</td>
+                            </tr>
+                            <tr>
+                                <th>কোম্পানি ওভার টাইম সুবিধাঃ</th>
+                                <td>{{$ad->company_full_time}}</td>
                             </tr>
 
 

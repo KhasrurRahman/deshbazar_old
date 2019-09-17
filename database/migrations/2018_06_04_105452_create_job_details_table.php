@@ -35,6 +35,26 @@ class CreateJobDetailsTable extends Migration
             $table->string('skill')->nullable();
             $table->smallInteger('age_limit')->nullable();
             $table->string('gender')->nullable();
+
+
+            $table->integer('candidate_age')->nullable();
+            $table->string('job_location')->nullable();
+            $table->string('company_facility')->nullable();
+            $table->string('company_transport_facility')->nullable();
+            $table->string('company_food_facility')->nullable();
+            $table->string('company_mobile_bill')->nullable();
+            $table->string('company_fastival_bonus')->nullable();
+            $table->string('company_fee_plan')->nullable();
+            $table->string('company_bill_incrase')->nullable();
+            $table->string('company_full_time')->nullable();
+            $table->string('company_place_type')->nullable();
+            $table->string('any_training_expairance')->nullable();
+            $table->string('any_workshop_experience')->nullable();
+            $table->string('any_computer_training_experience')->nullable();
+            $table->integer('voter_id_number')->nullable();
+            $table->integer('company_work_description')->nullable();
+
+
             $table->string('publication_status');
             $table->tinyInteger('top_ad')->default(0);
             $table->timestamps();

@@ -54,8 +54,52 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>আবেদনকারীর বয়স:</th>
+                            <td>{{$job->candidate_age}}</td>
+                        </tr>
+                        <tr>
+                            <th>জব লোকেশনঃ</th>
+                            <td>{{$job->job_location}}</td>
+                        </tr>
+                        <tr>
+                            <th>কোম্পানি সুযোগ সুবিধাঃ</th>
+                            <td>{{$job->company_facility}}</td>
+                        </tr>
+                        <tr>
+                            <th>ককোম্পানি যানবাহন সুবিধাঃ</th>
+                            <td>{{$job->company_transport_facility}}</td>
+                        </tr>
+                        <tr>
+                            <th>কোম্পানি খাবারের ব্যাবস্থাঃ</th>
+                            <td>{{$job->company_food_facility}}</td>
+                        </tr>
+                        <tr>
+                            <th>কোম্পানি মোবাইল বিলঃ</th>
+                            <td>{{$job->company_mobile_bill}}</td>
+                        </tr>
+                        <tr>
+                            <th>কোম্পানি ফেস্টিভ্যাল বোনাসঃ</th>
+                            <td>{{$job->company_fastival_bonus}}</td>
+                        </tr>
+                        <tr>
+                            <th>কোম্পানি কি প্রকারঃ</th>
+                            <td>{{$job->company_fee_plan}}</td>
+                        </tr>
+                        <tr>
+                            <th>কোম্পানি বেতন ভাড়বেঃ</th>
+                            <td>{{$job->company_bill_incrase}}</td>
+                        </tr>
+                        <tr>
+                            <th>কোম্পানি ওভার টাইম সুবিধাঃ</th>
+                            <td>{{$job->company_full_time}}</td>
+                        </tr>
+                        <tr>
+                            <th>কোম্পানি ওভার টাইম সুবিধাঃ</th>
+                            <td>{{$job->company_full_time}}</td>
+                        </tr>
+                        <tr>
                             <th>Job Description</th>
-                            <td>{{$job->description}}</td>
+                            <td>{!! $job->description !!}</td>
                         </tr>
                         <tr>
                             <th>Company Name</th>

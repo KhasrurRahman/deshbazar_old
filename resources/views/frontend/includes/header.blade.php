@@ -16,7 +16,7 @@
                         style="font-size: 17px;"
                         @endif>
                     <ul class="nav navbar-nav">
-                        <li><a href="{{route('all-ad')}}">সর্ব প্রকার বিজ্ঞাপন</a></li>
+                        <li><a href="{{route('all-ad')}}">{{ __('text.alladd') }}</a></li>
                         <li><a href="{{route('ghoreyboshe-family')}}">Ghoreyboshe.com এর পরিবার</a></li>
                     </ul>
                     @php
@@ -25,7 +25,7 @@
                     @endphp
 
 
-                    <div class="navbar-right">
+{{--                    <a href="{{route('language')}}">change laguage</a>--}}
                         <ul class="nav navbar-nav">
                             @if(Session::get('frontUserId'))
                                 @if(chat::where('to',$userid)->where('status',0)->get()->count() !== 0)

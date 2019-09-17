@@ -136,6 +136,65 @@
                     </li>
                 </ul>
             </li>
+
+
+            <li>
+                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Chat<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{route('all_chat')}}"> All Chat </a>
+                    </li>
+                    <li>
+                        <a href="{{route('edit-contact')}}"> Edit </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Footer Menu<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{route('jana_ojana')}}">জানা অজানা</a>
+                    </li>
+                    <li>
+                        <a href="{{route('ad_rules')}}">বিজ্ঞাপনের নিয়ম</a>
+                    </li>
+                    <li>
+                        <a href="{{route('payment_information')}}">বিল সংক্রান্ত তথ্য</a>
+                    </li>
+                    <li>
+                        <a href="{{route('customer_deal')}}">গ্রাহককে চুক্তি</a>
+                    </li>
+                    <li>
+                        <a href="{{route('fast_sell')}}">সহজে দ্রুতগতিতে বিক্রি করুন</a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin_terms')}}">আপনার অর্ডারের নিয়মগুলি</a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin_delivery')}}">ডেলিভারি</a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin_membership')}}">আমাদের সদস্য</a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin_about_us')}}">আমাদের সম্পর্কে</a>
+                    </li>
+                    <li>
+                        <a href="{{route('business_demand')}}">একটি ব্যবসা দাবি করুন</a>
+                    </li>
+                    <li>
+                        <a href="{{route('secret_terms')}}">ব্যবহারকারী গোপনীয়তা</a>
+                    </li>
+                    <li>
+                        <a href="{{route('ghoreyboshe_career')}}">স্থানীয় ঘরেবসে.কম ক্যারিয়ারের সুযোগ</a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+
             <li>
                 <a href="{{route('new-user')}}"><i class="fa fa-bar-chart fa-fw"></i> Add User</a>
             </li>

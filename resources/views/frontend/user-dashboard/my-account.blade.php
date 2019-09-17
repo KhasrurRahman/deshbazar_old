@@ -10,19 +10,21 @@
     <div class="container" id="dashboard">
         <div class="row">
             <div class="col-md-12 panel panel-default">
-                <div class="panel-body">
+                <div class="panel-body" style="padding: 0px">
                     <div class="col-md-3">
                         <ul>
                             <li class=""><a data-toggle="pill" href="#home">নিজের অ্যাকাউন্ট সমন্ধে </a></li>
                             <li><a data-toggle="pill" href="#menu1">সদস্য অথবা সদস্য পরিচায়ক</a></li>
-                            <li><a data-toggle="pill" href="">আপনার বিজ্ঞাপন আকর্ষণীয় করুন</a></li>
+                            <li><a data-toggle="pill" href="#topadd">আপনার বিজ্ঞাপন আকর্ষণীয় করুন</a></li>
                             <li><a href="#exampleModal" data-toggle="modal">আপনি সহজে বিক্রি করুন</a></li>
                             <li><a data-toggle="pill" href="#menu2">চিহ্ন এবং উরন্ত বৈশিষ্ট </a></li>
                             <li><a data-toggle="pill" href="#menu3">পাসওয়ার্ড,নাম ঠিকানা পরিবর্তন করুন</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-9" style="border-left:3px solid ">
                         <div class="tab-content">
+
+{{--                            home--}}
                             <div id="home" class="tab-pane fade in active">
                                 <h3><strong>{{Session::get('frontUserName')}} </strong></h3><hr/>
                                 @if($products)
@@ -80,6 +82,64 @@
                                     </div>
                                 @endif
                             </div>
+{{--promot your add--}}
+
+                            <div id="topadd" class="tab-pane fade">
+                                <h3><strong>{{Session::get('frontUserName')}} </strong></h3><hr/>
+                                @if($products)
+                                    <div class="row table-responsive">
+                                        <div class="col-md-12">
+                                            <strong>আপনার বিজ্ঞাপন লিস্টঃ </strong>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4 class="text-success text-center">আপনার বিজ্ঞাপন আকর্ষণীয় করুন</h4>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <table class="table table-bordered">
+                                                        <tr class="bg-primary">
+                                                            <th>Sl. No</th>
+                                                            <th>Ad Title</th>
+                                                            <th>Post Time</th>
+                                                            <th>Publication Status</th>
+                                                            <th>UP Ad</th>
+                                                            <th>promote Add</th>
+                                                        </tr>
+                                                        @php($i=1)
+                                                        @foreach($products as $product)
+                                                            <tr>
+                                                                <td>{{$i++}}</td>
+                                                                <td>{{$product->ad_title}}</td>
+                                                                <td>{{Carbon\Carbon::parse($product->created_at)->diffForHumans()}}</td>
+                                                                <td>{{$product->publication_status}}</td>
+                                                                <td>{{$product->top_ad == 1 ? 'Yes' : 'No'}}</td>
+                                                                <td>
+
+                                                                    @if($product->top_ad == 1)
+                                                                        <a href="#" class="btn btn-xs btn-success" title="Already top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                                                                    @else
+                                                                        <a href="{{route('promote-ad',['id'=>$product->id,'infoId'=>$product->information_id])}}" class="btn btn-xs btn-danger" title="Promote your ad">Promote your ad</a>
+                                                                    @endif
+
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @else
+                                    <div class="col-md-12 text-center" id="add">
+                                        <div>
+                                            <h4>আপনার এখন বিজ্ঞাপন নেই।আপনি কী বিজ্ঞাপন পোস্ট করতে চান, তাহলে নিচের বাটনে ক্লিক করুন।</h4>
+                                            <i class="fa fa-hand-o-down"></i>
+                                        </div>
+                                        <a href="{{route('post-ad')}}" class="btn btn-ad-post btn-lg">GhoreyBoshe.com এ আপনার বিজ্ঞাপন পোস্ট করুন</a>
+                                    </div>
+                                @endif
+                            </div>
+
+
 
                             <div id="menu1" class="tab-pane fade">
                                 <h3><strong>আমি ঘরেবসে.কম</strong> এর একজন <strong>সদস্য। অথবা সদস্য পরিচায়ক।</strong></h3><hr/>

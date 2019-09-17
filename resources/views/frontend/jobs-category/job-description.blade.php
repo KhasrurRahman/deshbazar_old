@@ -147,7 +147,7 @@
                         <div class="col-md-12 form-group">
                                     <label class="text-success">নিয়োগ বিজ্ঞপ্তি পদের সংখ্যা</label>
                                     <input type="number" name="total_vacancies" class="form-control" placeholder="পদের সংখ্যা ">
-                            </div>
+                        </div>
 
 
                             <div class="col-md-12 form-group">
@@ -158,106 +158,111 @@
                                 </div>
                             </div>
 
+
+
+
+{{--                        --------------------}}
+
+
+
                         <div class="col-md-12 form-group">
-                                    <label class="text-success">বয়স আবেদনকারীঃ</label>
-                                    <input type="number" name="expire_date" class="form-control" placeholder="১৮ থেকে ৬০ ">
+                                    <label class="text-success">আবেদনকারীর বয়স:</label>
+                                    <input type="number" name="candidate_age" class="form-control" placeholder="১৮ থেকে ৬০ ">
                                     <span class="text-danger">{{$errors->has('expire_date') ? $errors->first('expire_date'):' '}}</span>
                             </div>
 
                             <div class="col-md-12 form-group">
                                     <label class="text-success">জব লোকেশনঃ</label>
-                                    <input type="text" name="expire_date" class="form-control" placeholder="জব লোকেশনঃ">
+                                    <input type="text" name="job_location" class="form-control" placeholder="জব লোকেশনঃ">
                                     <span class="text-danger">{{$errors->has('expire_date') ? $errors->first('expire_date'):' '}}</span>
                             </div>
 
                             <div class="col-md-12 form-group">
                                     <label class="text-success">কোম্পানি সুযোগ সুবিধাঃ</label>
-                                <select name="job_type" class="form-control">
+                                <select name="company_facility" class="form-control">
                                     <option value="" selected disabled>কোম্পানি সুযোগ সুবিধাঃ</option>
-                                    <option value="সম্পূর্ণ সময়">আছে</option>
-                                    <option value="সম্পূর্ণ সময়">নাই</option>
+                                    <option value="আছে">আছে</option>
+                                    <option value="নাই">নাই</option>
                                 </select>
                             </div>
 
                         <div class="col-md-12 form-group">
                                     <label class="text-success">কোম্পানি যানবাহন সুবিধাঃ</label>
-                                <select name="job_type" class="form-control">
+                                <select name="company_transport_facility" class="form-control">
                                     <option value="" selected disabled>কোম্পানি যানবাহন সুবিধাঃ</option>
-                                    <option value="সম্পূর্ণ সময়">আছে</option>
-                                    <option value="সম্পূর্ণ সময়">নাই</option>
+                                    <option value="আছে">আছে</option>
+                                    <option value="নাই">নাই</option>
                                 </select>
                             </div>
 
                         <div class="col-md-12 form-group">
                                     <label class="text-success">কোম্পানি খাবারের ব্যাবস্থাঃ</label>
-                                <select name="job_type" class="form-control">
+                                <select name="company_food_facility" class="form-control">
                                     <option value="" selected disabled>কোম্পানি খাবারের ব্যাবস্থাঃ</option>
-                                    <option value="সম্পূর্ণ সময়">আছে</option>
-                                    <option value="সম্পূর্ণ সময়">নাই</option>
+                                    <option value="আছে">আছে</option>
+                                    <option value="নাই">নাই</option>
                                 </select>
                             </div>
 
                         <div class="col-md-12 form-group">
                                     <label class="text-success">কোম্পানি মোবাইল বিলঃ</label>
-                                <select name="job_type" class="form-control">
+                                <select name="company_mobile_bill" class="form-control">
                                     <option value="" selected disabled>ককোম্পানি মোবাইল বিলঃ</option>
-                                    <option value="সম্পূর্ণ সময়">আছে</option>
-                                    <option value="সম্পূর্ণ সময়">নাই</option>
+                                    <option value="আছে">আছে</option>
+                                    <option value="নাই">নাই</option>
                                 </select>
                             </div>
 
                         <div class="col-md-12 form-group">
                                     <label class="text-success">কোম্পানি ফেস্টিভ্যাল বোনাসঃ</label>
-                                <select name="job_type" class="form-control">
+                                <select name="company_fastival_bonus" class="form-control">
                                     <option value="" selected disabled>কোম্পানি ফেস্টিভ্যাল বোনাসঃ</option>
-                                    <option value="সম্পূর্ণ সময়">আছে</option>
-                                    <option value="সম্পূর্ণ সময়">নাই</option>
+                                    <option value="আছে">আছে</option>
+                                    <option value="নাই">নাই</option>
                                 </select>
                             </div>
 
                         <div class="col-md-12 form-group">
                                     <label class="text-success">কোম্পানি কি প্রকারঃ</label>
-                                <select name="job_type" class="form-control">
+                                <select name="company_fee_plan" class="form-control">
                                     <option value="" selected disabled>কোম্পানি কি প্রকারঃ</option>
-                                    <option value="সম্পূর্ণ সময়">ন্যাশনাল </option>
-                                    <option value="সম্পূর্ণ সময়">ইন্টারন্যাশনাল </option>
+                                    <option value="ন্যাশনাল">ন্যাশনাল</option>
+                                    <option value="ইন্টারন্যাশনাল">ইন্টারন্যাশনাল </option>
                                 </select>
                             </div>
 
                         <div class="col-md-12 form-group">
                                     <label class="text-success">কোম্পানি বেতন ভাড়বেঃ </label>
-                                <select name="job_type" class="form-control">
+                                <select name="company_bill_incrase" class="form-control">
                                     <option value="" selected disabled>কোম্পানি বেতন ভাড়বেঃ </option>
-                                    <option value="সম্পূর্ণ সময়">৬ মাস</option>
-                                    <option value="সম্পূর্ণ সময়">১ বছর</option>
-                                    <option value="সম্পূর্ণ সময়">২ বছর</option>
+                                    <option value="৬ মাস">৬ মাস</option>
+                                    <option value="১ বছর">১ বছর</option>
+                                    <option value="২ বছর">২ বছর</option>
                                 </select>
                             </div>
 
                         <div class="col-md-12 form-group">
                             <label class="text-success">কোম্পানি ওভার টাইম সুবিধাঃ</label>
-                            <select name="job_type" class="form-control">
+                            <select name="company_full_time" class="form-control">
                                 <option value="" selected disabled>কোম্পানি ওভার টাইম সুবিধাঃ</option>
-                                <option value="সম্পূর্ণ সময়">আছে</option>
-                                <option value="সম্পূর্ণ সময়">নাই</option>
+                                <option value="আছে">আছে</option>
+                                <option value="নাই">নাই</option>
                             </select>
                         </div>
 
 
-
+{{-----------------------}}
 
 
                         <h3>আপনার  প্রতিষ্ঠান সম্পর্কে</h3><hr/>
                             <div class="col-md-12 form-group">
-
                                 <label class="text-success">কোম্পানির নামঃ</label>
                                 <input type="text" name="company_name" class="form-control" placeholder="ম্পানির নামঃ">
                                 <span class="text-danger">{{$errors->has('company_name') ? $errors->first('company_name'):' '}}</span>
                             </div>
                             <div class="col-md-12 form-group">
-
                                 <label class="text-success">কোম্পানি কাজের বিবরনঃ</label>
-                            <textarea name="company_name" class="form-control"></textarea>
+                            <textarea name="company_work_description" class="form-control"></textarea>
                             </div>
                             <div class="col-md-12 form-group">
                                 <div class="col-md-9" style="padding-left: 0">
@@ -285,7 +290,7 @@
                                 </div>
                                 <div class="col-md-6" style="padding-right: 0">
                                     <label class="text-success">আমার অভিজ্ঞতা</label>
-                                    <input type="number" name="experience"  class="form-control" placeholder="আমার অভিজ্ঞতা">
+                                    <input type="text" name="experience"  class="form-control" placeholder="আমার অভিজ্ঞতা">
                                 </div>
                             </div>
                             <div class="col-md-12 form-group">
@@ -345,11 +350,20 @@
                             </div>
 
 
+
+
+
+
+
+
+
+
+{{--                        -------------------------}}
+
+
+
+
                             <div class="col-md-12 form-group">
-                                <div class="col-md-6" style="padding-left: 0">
-                                    <label class="text-success">আবেদনকারীর বয়স :</label>
-                                    <input type="number" name="age_limit"  class="form-control" placeholder="১৮ থেকে ৬০ বছর">
-                                </div>
                                 <div class="col-md-6" style="padding-left: 0">
                                     <label class="text-success">আপনার মোবাইল / ফোন নাম্বার </label>
                                     <input type="text" name="phone_number" class="form-control" placeholder="ফোন নাম্বার" value="{{$frontUser->phone_number}}">
@@ -360,14 +374,14 @@
                                 <div class="col-md-12 form-group">
                                     <div class="col-md-6" style="padding-left: 0">
                                         <label class="text-success">কোন পদে আবেদন করছেনঃ</label>
-                                        <input type="text" name="age_limit"  class="form-control" placeholder="কোন পদে আবেদন করছেনঃ">
+                                        <input type="text" name="company_place_type"  class="form-control" placeholder="কোন পদে আবেদন করছেনঃ">
                                     </div>
                                     <div class="col-md-6" style="padding-right: 0">
                                         <label class="text-success">কোন ট্রেনিং করছেনঃ</label>
-                                        <select name="gender" class="form-control">
+                                        <select name="any_training_expairance" class="form-control">
                                             <option value="" selected disabled>কোন ট্রেনিং করছেনঃ</option>
-                                            <option value="পুরুষ">আছে</option>
-                                            <option value="নারী">নাই</option>
+                                            <option value="আছে">আছে</option>
+                                            <option value="নাই">নাই</option>
                                         </select>
                                     </div>
                                 </div>
@@ -375,7 +389,7 @@
                         <div class="col-md-12 form-group">
                                     <div class="col-md-6" style="padding-right: 0">
                                         <label class="text-success">কোন ওয়্যাকশপ করছেনঃ</label>
-                                        <select name="gender" class="form-control">
+                                        <select name="any_workshop_experience" class="form-control">
                                             <option value="" selected disabled>কোন ওয়্যাকশপ করছেনঃ</option>
                                             <option value="আছে">আছে</option>
                                             <option value="নাই">নাই</option>
@@ -384,7 +398,7 @@
 
                             <div class="col-md-6" style="padding-right: 0">
                                         <label class="text-success">কম্পিউটার ট্রেনিং করছেনঃ</label>
-                                        <select name="gender" class="form-control">
+                                        <select name="any_computer_training_experience" class="form-control">
                                             <option value="" selected disabled>কম্পিউটার ট্রেনিং করছেনঃ</option>
                                             <option value="আছে">আছে</option>
                                             <option value="নাই">নাই</option>
@@ -396,9 +410,14 @@
                         <div class="col-md-12 form-group">
                                     <div class="col-md-6" style="padding-right: 0">
                                         <label class="text-success">ভোটার আইডি নাম্বারঃ</label>
-                                        <input type="text" name="phone_number" class="form-control" placeholder="ফভোটার আইডি নাম্বারঃ" value="{{$frontUser->phone_number}}">
+                                        <input type="number" name="voter_id_number" class="form-control" placeholder="ফভোটার আইডি নাম্বারঃ" value="{{$frontUser->phone_number}}">
                                     </div>
                          </div>
+
+
+
+
+{{--                        -------------------}}
 
                         <button type="submit" class="btn btn-success btn-lg">আপনার এই বিজ্ঞাপন পোস্ট করুন</button>
                         {{Form::close()}}

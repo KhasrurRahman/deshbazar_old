@@ -19,7 +19,7 @@ class ChatControler extends Controller
 
 
         if (        $pro_chat_id = ProductUserchat::where('user1_id',$userid)->orWhere('user2_id',$userid)->first()->count() == 0){
-            echo 'false';
+            echo 'You Have No Chat Right Now';
         }else{
                 $pro_chat_id = ProductUserchat::where('user1_id',$userid)->orWhere('user2_id',$userid)->first()->id;
                     return redirect()->route('chat_conversetion', $pro_chat_id);

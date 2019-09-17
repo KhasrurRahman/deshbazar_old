@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 well mt">
-                <h3><strong>আপনি চুক্তি করার আগে আমাদের সাথে ০১৭১৭-৬৮৬৯৮৮ কথা বলুন। </strong></h3>
+                {!! $footer !!}
 
             </div>
         </div>

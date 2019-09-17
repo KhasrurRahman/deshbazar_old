@@ -218,4 +218,47 @@
         </div>
     </div>
 
+
+    {{--chat model here--}}
+    <div class="modal fade" id="chat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">{{$product->ad_title}}</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img style="    height: 100px;width: 139px;margin-top: 30px;" src="{{asset($product->product_image1) }}"/>
+                        </div>
+
+                        <div class="col-md-9">
+                            <h3>{{$product->product_price}}Tk ,{{$product->product_price_check}}</h3>
+                            <p>{!!str_limit($product->product_description,100)!!}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <form action="{{route('chat_user_create',$product->id)}}" method="get">
+                    <div class="modal-body">
+                        <input type="text" class="form-control" name="message" placeholder="ম্যাসেজ">
+                        <input type="hidden" value="" name="sellerid">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
 @endsection

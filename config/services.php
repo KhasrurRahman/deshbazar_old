@@ -41,6 +41,12 @@ return [
         'redirect' => 'https://ghoreyboshe.com/callback',
     ],
 
+    'gmail' => [
+        'client_id' => '393835088023076',
+        'client_secret' => 'b42040e099e75fcbfbf770cb265f0bef',
+        'redirect' => 'https://ghoreyboshe.com/callback',
+    ],
+
 
 
 ];

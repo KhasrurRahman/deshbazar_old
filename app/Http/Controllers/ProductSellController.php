@@ -44,6 +44,7 @@ class ProductSellController extends Controller
     public function productDescription($categoryId,$subcategoryId,$countryId,$divisionId,$districtId){
         $userId = Session::get('frontUserId');
         $frontUser = FrontUser::where('id',$userId)->first();
+        $product_category = ProductCategory::find($categoryId);
 
         return view('frontend.product-description.product-description',[
             'frontUser'=>$frontUser,
@@ -52,6 +53,7 @@ class ProductSellController extends Controller
             'countryId'=>$countryId,
             'divisionId'=>$divisionId,
             'districtId'=>$districtId,
+            'product_category'=>$product_category,
         ]);
     }
     protected function productInfoValidate($request){

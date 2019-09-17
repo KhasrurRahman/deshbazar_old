@@ -11,7 +11,6 @@
                 <div class="panel-body" >
                     <div class="row" >
 
-
                         <div class="col-md-12">
                             <h3>আপনি কিছু বিক্রি করতে চান? নিছের ফরম পুরন করুন, আপনার পণ্য বিজ্ঞাপন দিয়ে বিক্রি করুন খুব  সহজেঃ </h3><hr><hr/>
                             {{Form::open(['route'=>'save-product-information','method'=>'POST','class'=>'form-horizontal','enctype'=>'multipart/form-data'])}}
@@ -79,39 +78,8 @@
                                         <input type="text" class="form-control" name="product_model" placeholder="মডেল ">
                                         <span class="text-danger">{{$errors->has('product_model') ? $errors->first('product_model'):' '}}</span>
                                     </div>
-                                    <div class="col-md-12 form-group">
-                                        <label class="text-success">মডেল সাল ও সিসিঃ</label>
-                                        <input type="text" class="form-control" name="product_model_year_cc" placeholder="মডেল সাল ও সিসি ">
-                                        <span class="text-danger"></span>
                                     </div>
-                                    <div class="col-md-12 form-group">
-                                        <label class="text-success">নিবন্ধন সালঃ</label>
-                                        <input type="date" class="form-control" name="product_publish_year" placeholder="িবন্ধন সাল">
-                                        <span class="text-danger"></span>
-                                    </div>
-                                    <div class="col-md-12 form-group">
-                                        <label class="text-success">কি তেলে চলেঃ </label><br>
-                                        <label><input type="radio" name="product_oil" value="পেট্রল" />পেট্রল</label>
-                                        <label><input type="radio" name="product_oil" value="ডিজেল" />ডিজেল</label>
-                                        <label><input type="radio" name="product_oil" value="অকটেন" />অকটেন </label>
-                                    </div>
-                                    <div class="col-md-12 form-group">
-                                        <label class="text-success">জেনুইন: </label><br>
-                                        <label><input type="radio" name="product_reality" value="আসল" />আসল</label>
-                                        <label><input type="radio" name="product_reality" value="রেপ্লিকা/ক্লোন" />রেপ্লিকা/ক্লোন</label>
-                                        <span class="text-danger">{{$errors->has('product_reality') ? $errors->first('product_reality'):' '}}</span>
-                                    </div>
-                                    <div class="col-md-12 form-group">
-                                        <label class="text-success">আপনার যানবাহন কত কিলোমিটার চলচ্ছেঃ</label>
-                                        <input type="text" class="form-control" name="product_km_ride" placeholder="আপনার যানবাহন কত কিলোমিটার চলচ্ছেঃ ">
-                                        <span class="text-danger"></span>
-                                    </div>
-                                    <div class="col-md-12 form-group">
-                                        <label class="text-success">আপনার গাড়ি এই যাবত কতবার সার্ভিস হয়েছেঃ</label>
-                                        <input type="number" class="form-control" name="product_servising_time" placeholder="আপনার গাড়ি এই যাবত কতবার সার্ভিস হয়েছেঃ">
-                                        <span class="text-danger"></span>
-                                    </div>
-                                </div>
+
 
                                 <div class="col-md-4" >
                                     <div class="col-md-12" style="border: 1px solid;margin-top: 30px">
@@ -119,11 +87,54 @@
                                     </div>
 
                                     <div class="col-md-12" style="margin-top: 30px;border: 1px solid">
-                                            <h4 style="text-align: center">আপনি ভালো ভাবে বিজ্ঞাপন এর তথ্য দিলে ভালো বিক্রয় হবে । </h4>
-                                        </div>
+                                        <h4 style="text-align: center">আপনি ভালো ভাবে বিজ্ঞাপন এর তথ্য দিলে ভালো বিক্রয় হবে । </h4>
+                                    </div>
+
+
                                 </div>
 
                             </div>
+
+
+
+                                    <div class="row">
+                                        @if($product_category->category_name == 'গাড়ি ও যানবাহন')
+                                            <div class="col-md-12 form-group">
+                                                <label class="text-success">মডেল সাল ও সিসিঃ</label>
+                                                <input type="text" class="form-control" name="product_model_year_cc" placeholder="মডেল সাল ও সিসি ">
+                                                <span class="text-danger"></span>
+                                            </div>
+                                            <div class="col-md-12 form-group">
+                                                <label class="text-success">নিবন্ধন সালঃ</label>
+                                                <input type="date" class="form-control" name="product_publish_year" placeholder="িবন্ধন সাল">
+                                                <span class="text-danger"></span>
+                                            </div>
+                                            <div class="col-md-12 form-group">
+                                                <label class="text-success">কি তেলে চলেঃ </label><br>
+                                                <label><input type="radio" name="product_oil" value="পেট্রল" />পেট্রল</label>
+                                                <label><input type="radio" name="product_oil" value="ডিজেল" />ডিজেল</label>
+                                                <label><input type="radio" name="product_oil" value="অকটেন" />অকটেন </label>
+                                            </div>
+                                            <div class="col-md-12 form-group">
+                                                <label class="text-success">জেনুইন: </label><br>
+                                                <label><input type="radio" name="product_reality" value="আসল" />আসল</label>
+                                                <label><input type="radio" name="product_reality" value="রেপ্লিকা/ক্লোন" />রেপ্লিকা/ক্লোন</label>
+                                                <span class="text-danger">{{$errors->has('product_reality') ? $errors->first('product_reality'):' '}}</span>
+                                            </div>
+                                            <div class="col-md-12 form-group">
+                                                <label class="text-success">আপনার যানবাহন কত কিলোমিটার চলচ্ছেঃ</label>
+                                                <input type="text" class="form-control" name="product_km_ride" placeholder="আপনার যানবাহন কত কিলোমিটার চলচ্ছেঃ ">
+                                                <span class="text-danger"></span>
+                                            </div>
+                                            <div class="col-md-12 form-group">
+                                                <label class="text-success">আপনার গাড়ি এই যাবত কতবার সার্ভিস হয়েছেঃ</label>
+                                                <input type="number" class="form-control" name="product_servising_time" placeholder="আপনার গাড়ি এই যাবত কতবার সার্ভিস হয়েছেঃ">
+                                                <span class="text-danger"></span>
+                                            </div>
+                                    </div>
+
+                                    @endif
+
 
 
 

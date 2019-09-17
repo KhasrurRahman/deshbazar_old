@@ -166,14 +166,14 @@
                     @elseif(isset($ad->job_type))
                         {{Form::open(['route'=>'update-job-ad','method'=>'POST','class'=>'form-horizontal','enctype'=>'multipart/form-data'])}}
                         <div class="form-group">
-                            <label class="control-label col-md-4">কাজের শিরোনাম</label>
+                            <label class="control-label col-md-4 text-success">কাজের শিরোনাম</label>
                             <div class="col-md-8">
                                 <input type="text" value="{{$ad->ad_title}}" name="ad_title" class="form-control"/>
                                 <input type="hidden" value="{{$ad->id}}" name="job_id" class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">কাজের টাইপ</label>
+                            <label class="control-label col-md-4 text-success">কাজের টাইপ</label>
                             <div class="col-md-8">
                                 <select class="form-control" name="job_type">
                                     <option value="{{$ad->job_type}}">{{$ad->job_type}}</option>
@@ -188,7 +188,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">কাজের বিভাগ</label>
+                            <label class="control-label col-md-4 text-success">কাজের বিভাগ</label>
                             <div class="col-md-8">
                                 <select class="form-control" name="industry">
                                     <option value="{{$ad->industry}}">{{$ad->industry}}</option>
@@ -253,13 +253,13 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">চাকুরি অবস্তানের নাম</label>
+                            <label class="control-label col-md-4 text-success">চাকুরি অবস্তানের নাম</label>
                             <div class="col-md-8">
                                 <input type="text" value="{{$ad->designation}}" name="designation" class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">আবেদন কি ভাবে রিসিভ করবেন</label>
+                            <label class="control-label col-md-4 text-success">আবেদন কি ভাবে রিসিভ করবেন</label>
                             <div class="col-md-8">
                                 <select class="form-control" name="recieve_option">
                                     <option value="{{$ad->recieve_option}}">{{$ad->recieve_option}}</option>
@@ -269,7 +269,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">মাসিক বেতন</label>
+                            <label class="control-label col-md-4 text-success">মাসিক বেতন</label>
                             <div class="col-md-8">
                                 <div class="col-md-4">
                                     <input type="number" value="{{$ad->starting_range}}" name="starting_range" class="form-control" placeholder="হইতে">
@@ -280,25 +280,25 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">পদের সংখ্যা</label>
+                            <label class="control-label col-md-4 text-success">পদের সংখ্যা</label>
                             <div class="col-md-8">
                                 <input type="number" value="{{$ad->total_vacancies}}" name="total_vacancies" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">আবেদনের শেষ সময়</label>
+                            <label class="control-label col-md-4 text-success">আবেদনের শেষ সময়</label>
                             <div class="col-md-8">
                                 <input type="text" value="{{$ad->expire_date}}" name="expire_date" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">কোম্পানি</label>
+                            <label class="control-label col-md-4 text-success">কোম্পানি</label>
                             <div class="col-md-8">
                                 <input type="text" value="{{$ad->company_name}}" name="company_name" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">প্রতিষ্ঠান লোগো</label>
+                            <label class="control-label col-md-4 text-success">প্রতিষ্ঠান লোগো</label>
                             <div class="col-md-8">
                                 <input type="file" name="company_logo" accept="image/*"/>
                                 <br />
@@ -306,7 +306,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">শিক্ষাগত যোগ্যতা</label>
+                            <label class="control-label col-md-4 text-success">শিক্ষাগত যোগ্যতা</label>
                             <div class="col-md-8">
                                 <select class="form-control" name="minimum_requirement">
                                     <option value="{{$ad->minimum_requirement}}">{{$ad->minimum_requirement}}</option>
@@ -322,13 +322,13 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">অভিজ্ঞতা</label>
+                            <label class="control-label col-md-4 text-success">অভিজ্ঞতা</label>
                             <div class="col-md-8">
-                                <input type="number" value="{{$ad->experience}}" name="experience" class="form-control">
+                                <input type="text" value="{{$ad->experience}}" name="experience" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">শিক্ষাগত অভিজ্ঞতা</label>
+                            <label class="control-label col-md-4 text-success">শিক্ষাগত অভিজ্ঞতা</label>
                             <div class="col-md-8">
                                 <select class="form-control" name="education_sector">
                                     <option value="{{$ad->education_sector}}">{{$ad->education_sector}}</option>
@@ -363,19 +363,19 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">কাজের অভিজ্ঞতা</label>
+                            <label class="control-label col-md-4 text-success">কাজের অভিজ্ঞতা</label>
                             <div class="col-md-8">
                                 <input type="text" value="{{$ad->skill}}" name="skill" class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">আবেদনকারীর বয়স</label>
+                            <label class="control-label col-md-4 text-success">আবেদনকারীর বয়স</label>
                             <div class="col-md-8">
                                 <input type="number" value="{{$ad->age_limit}}" name="age_limit" class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-4">জেন্ডার</label>
+                            <label class="control-label col-md-4 text-success">জেন্ডার</label>
                             <div class="col-md-8">
                                 <select class="form-control" name="gender">
                                     <option value="{{$ad->gender}}">{{$ad->gender}}</option>
@@ -386,8 +386,128 @@
                                 </select>
                             </div>
                         </div>
+
+
+
+{{--                    ------------------}}
                         <div class="form-group">
-                            <label class="control-label col-md-4">বিবরণ</label>
+                            <label class="control-label col-md-4 text-success">আবেদনকারীর বয়স:</label>
+                            <div class="col-md-8">
+                                <input type="number" name="candidate_age" class="form-control" value="{{$ad->candidate_age}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4 text-success">জব লোকেশনঃ</label>
+                            <div class="col-md-8">
+                                <input type="number" name="job_location" class="form-control" value="{{$ad->job_location}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4 text-success">কোম্পানি সুযোগ সুবিধাঃ</label>
+                            <div class="col-md-8">
+                                <select name="company_facility" class="form-control">
+                                    <option value="{{$ad->company_facility}}">{{$ad->company_facility}}</option>
+                                    <option value="আছে">আছে</option>
+                                    <option value="নাই">নাই</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4 text-success">ককোম্পানি যানবাহন সুবিধাঃ</label>
+                            <div class="col-md-8">
+                                <select name="company_transport_facility" class="form-control">
+                                    <option value="{{$ad->company_transport_facility}}">{{$ad->company_transport_facility}}</option>
+                                    <option value="আছে">আছে</option>
+                                    <option value="নাই">নাই</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4 text-success">কোম্পানি খাবারের ব্যাবস্থাঃ</label>
+                            <div class="col-md-8">
+                                <select name="company_food_facility" class="form-control">
+                                    <option value="{{$ad->company_food_facility}}">{{$ad->company_food_facility}}</option>
+                                    <option value="আছে">আছে</option>
+                                    <option value="নাই">নাই</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4 text-success">কোম্পানি মোবাইল বিলঃ</label>
+                            <div class="col-md-8">
+                                <select name="company_mobile_bill" class="form-control">
+                                    <option value="{{$ad->company_mobile_bill}}">{{$ad->company_mobile_bill}}</option>
+                                    <option value="আছে">আছে</option>
+                                    <option value="নাই">নাই</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4 text-success">কোম্পানি ফেস্টিভ্যাল বোনাসঃ</label>
+                            <div class="col-md-8">
+                                <select name="company_fastival_bonus" class="form-control">
+                                    <option value="{{$ad->company_fastival_bonus}}">{{$ad->company_fastival_bonus}}</option>
+                                    <option value="আছে">আছে</option>
+                                    <option value="নাই">নাই</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4 text-success">কোম্পানি কি প্রকারঃ</label>
+                            <div class="col-md-8">
+                                <select name="company_fee_plan" class="form-control">
+                                    <option value="{{$ad->company_fee_plan}}">{{$ad->company_fee_plan}}</option>
+                                    <option value="ন্যাশনাল">ন্যাশনাল</option>
+                                    <option value="ইন্টারন্যাশনাল">ইন্টারন্যাশনাল </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4 text-success">কোম্পানি বেতন ভাড়বেঃ</label>
+                            <div class="col-md-8">
+                                <select name="company_bill_incrase" class="form-control">
+                                    <option value="{{$ad->company_bill_incrase}}">{{$ad->company_bill_incrase}}</option>
+                                    <option value="৬ মাস">৬ মাস</option>
+                                    <option value="১ বছর">১ বছর</option>
+                                    <option value="২ বছর">২ বছর</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4 text-success">কোম্পানি ওভার টাইম সুবিধাঃ</label>
+                            <div class="col-md-8">
+                                <select name="company_full_time" class="form-control">
+                                    <option value="{{$ad->company_full_time}}">{{$ad->company_full_time}}</option>
+                                    <option value="আছে">আছে</option>
+                                    <option value="নাই">নাই</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+{{--                    ---------------------}}
+
+
+
+
+
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4 text-success">বিবরণ</label>
                             <div class="col-md-8">
                                 <textarea name="description" id="editor" class="form-control">{{$ad->description}}</textarea>
                             </div>

@@ -1,4 +1,4 @@
-@extends('frontend.master')
+ @extends('frontend.master')
 
 @section('head')
     <meta property="og:url" content="https://ghoreyboshe.com/single-job-view/{{$job->id}}" />
@@ -29,51 +29,81 @@
                 <div class="col-md-12">
                     <p><a href="{{route('/')}}">হোমপেজ</a> -> <a href="{{route('all-ad')}}">সকল বিজ্ঞাপন</a> -> <a href="{{route('divisional-product',['id'=>$div->id])}}"> {{$div->division_name}} </a> -> <a href="{{route('district-ad',['id'=>$district->id])}}"> {{$district->district_name}}</a> -> <a href="{{route('category-product',['id'=>$cat->id])}}"> {{$cat->category_name}} </a> -> <a href="{{route('subcategory-product',['id'=>$subCategory->id])}}"> {{$subCategory->subcategory_name}} </a> ->{{$job->ad_title}} </p>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12" >
                     <div class="col-md-8">
                         <div class="media-object media-left">
-                            <img src="{{asset($job->company_logo)}}" alt="Logo" style="width:200px;height: 200px;"/>
+                            <img src="{{asset($job->company_logo)}}" alt="Logo" style="    width: 55%;
+    height: 53%;
+    padding: 22px;"/>
                         </div>
-                        <div class="col-md-12">
+
+
+
+                        <div class="col-md-12" style="padding: 21px;box-shadow: 0px 0px 10px seagreen;">
                             <div class="col-md-5">
                                 <table class="table">
-                                    <tr>
+                                    <tr class="bg-danger">
                                         <th>চাকরির অবস্থান</th>
                                         <td>{{$job->district_name}}</td>
                                     </tr>
-                                    <tr>
+                                    <tr class="bg-danger">
                                         <th>কোম্পানি</th>
                                         <td>{{$job->company_name}}</td>
                                     </tr>
-                                    <tr>
+                                    <tr class="bg-danger">
                                         <th>কাজের টাইপ</th>
                                         <td>{{$job->job_type}}</td>
                                     </tr>
-                                    <tr>
+                                    <tr class="bg-warning">
                                         <th>কাজের বিভাগ</th>
                                         <td>{{$job->industry}}</td>
                                     </tr>
-                                    <tr>
+                                    <tr class="bg-danger">
                                         <th>চাকুরি অবস্তানের নাম</th>
                                         <td>{{$job->designation}}</td>
                                     </tr>
-                                    <tr>
+                                    <tr class="bg-success">
                                         <th>শিক্ষাগত যোগ্যতা </th>
                                         <td>{{$job->minimum_requirement}}</td>
                                     </tr>
-                                    <tr>
+                                    <tr class="bg-danger">
                                         <th>কাজের অভিজ্ঞতা</th>
                                         <td>{{$job->skill}}</td>
                                     </tr>
+{{---------------}}
 
 
+                                    <tr class="bg-warning">
+                                        <th>আবেদনকারীর বয়স:</th>
+                                        <td>{{$job->candidate_age}}</td>
+                                    </tr>
+                                    <tr class="bg-warning">
+                                        <th>জব লোকেশনঃ</th>
+                                        <td>{{$job->job_location}}</td>
+                                    </tr>
+                                    <tr class="bg-warning">
+                                        <th>কোম্পানি সুযোগ সুবিধাঃ</th>
+                                        <td>{{$job->company_facility}}</td>
+                                    </tr>
+                                    <tr class="bg-warning">
+                                        <th>ককোম্পানি যানবাহন সুবিধাঃ</th>
+                                        <td>{{$job->company_transport_facility}}</td>
+                                    </tr>
+                                    <tr class="bg-success">
+                                        <th>কোম্পানি খাবারের ব্যাবস্থাঃ</th>
+                                        <td>{{$job->company_food_facility}}</td>
+                                    </tr>
+                                    <tr class="bg-success">
+                                        <th>কোম্পানি মোবাইল বিলঃ</th>
+                                        <td>{{$job->company_mobile_bill}}</td>
+                                    </tr>
                                 </table>
 
                             </div>
                             <div class="col-md-1"></div>
                             <div class="col-md-5">
                                 <table class="table">
-                                    <tr>
+                                    <tr class="bg-success">
                                         <th>মাসিক বেতন</th>
                                         @if($job->starting_range)
                                             <td>Tk. {{$job->starting_range}} - {{$job->ending_range}}</td>
@@ -81,31 +111,56 @@
                                             <td>Negotiable</td>
                                         @endif
                                     </tr>
-                                    <tr>
+                                    <tr class="bg-info">
                                         <th>পদের সংখ্যা</th>
                                         <td>{{$job->total_vacancies }}</td>
                                     </tr>
-                                    <tr>
+                                    <tr class="bg-info">
                                         <th>আবেদনকারীর বয়স</th>
                                         <td>{{$job->age_limit}}</td>
                                     </tr>
-                                    <tr>
+                                    <tr class="bg-success">
                                         <th>জেন্ডার</th>
                                         <td>{{$job->gender}}</td>
                                     </tr>
-                                    <tr>
+                                    <tr class="bg-warning">
                                         <th>অভিজ্ঞতা</th>
                                         <td>{{$job->experience}}</td>
                                     </tr>
-                                    <tr>
+                                    <tr class="bg-warning">
                                         <th>শিক্ষাগত অভিজ্ঞতা </th>
                                         <td>{{$job->education_sector}}</td>
                                     </tr>
 
-                                    <tr>
+                                    <tr class="bg-warning">
                                         <th>আবেদন করার শেষ তারিখ</th>
                                         <td>{{$job->expire_date}}</td>
                                     </tr>
+
+
+{{--                                    -----------}}
+
+                                    <tr class="bg-danger">
+                                        <th>কোম্পানি ফেস্টিভ্যাল বোনাসঃ</th>
+                                        <td>{{$job->company_fastival_bonus}}</td>
+                                    </tr>
+                                    <tr class="bg-danger">
+                                        <th>কোম্পানি কি প্রকারঃ</th>
+                                        <td>{{$job->company_fee_plan}}</td>
+                                    </tr>
+                                    <tr class="bg-danger">
+                                        <th>কোম্পানি বেতন ভাড়বেঃ</th>
+                                        <td>{{$job->company_bill_incrase}}</td>
+                                    </tr>
+                                    <tr class="bg-danger">
+                                        <th>কোম্পানি ওভার টাইম সুবিধাঃ</th>
+                                        <td>{{$job->company_full_time}}</td>
+                                    </tr>
+                                    <tr class="bg-danger">
+                                        <th>কোম্পানি ওভার টাইম সুবিধাঃ</th>
+                                        <td>{{$job->company_full_time}}</td>
+                                    </tr>
+
 
                                 </table>
 
@@ -119,36 +174,70 @@
                             <p>{{Carbon\Carbon::parse($job->updated_at)->format("F j, Y, g:i A")}}</p>
                             <hr/>
                         </div>
-                        <h3>যোগাযোগ করুন</h3>
-                        <a href="#"><h3><i class="fa fa-phone"></i> {{$job->phone_number}}</h3></a><hr/>
-                        <a href="#">
-                            <img src="{{asset('/') }}front/images/cat.png" alt=""/>
-                            ম্যাসেজ/চ্যাট করুন</a><hr/>
-                        <a href="{{route('promote-ad',['id'=>$job->id,'infoId'=>$job->information_id])}}" class="btn btn-ad-post btn-block text-danger">আপনার মূল্যবান বিজ্ঞাপন প্রচার করুন।</a>
-                        <hr />
-                        <h4>বিজ্ঞাপনটি শেয়ার করুন</h4>
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=ghoreyboshe.com/single-job-view/{{$job->id}}" target="_blank" class="share-icon facebook">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                        <a href="https://twitter.com/intent/tweet?url=https://ghoreyboshe.com/single-job-view/{{$job->id}}&text={{ $job->ad_title}} বিস্তারিত দেখতে ক্লিক করুন " target="_blank" class="share-icon twitter">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                        <a href="https://plus.google.com/share?url=ghoreyboshe.com/single-job-view/{{$job->id}}" target="_blank" class="share-icon gplus">
-                            <i class="fa fa-google-plus"></i>
-                        </a>
-                        <hr />
+
+
+
+
+                            <div class="col-sm-12 col-lg-12 col-md-12  ">
+                                <h3>যোগাযোগ করুন</h3>
+                                <table class="table">
+{{--                                    <tr class="active">--}}
+{{--                                        <th scope="col"><h3><i class="fa fa-phone"></i></h3></th>--}}
+{{--                                        <th scope="col"><h3>{{$job->phone_number}}</h3></th>--}}
+{{--                                    </tr>--}}
+                                    <tr class="active">
+                                    <tr class="bg-danger">
+                                        <th><h3><a href="#"><i class="fa fa-comment"></i></a></h3></th>
+                                        @if(Session::get('frontUserId'))
+                                            <th><a href="#chat" data-toggle="modal"><h3>ম্যাসেজ/চ্যাট করুন</h3></a></th>
+                                        @else
+                                            <th><a href="{{route('signup-options')}}" data-toggle="modal"><h3>ম্যাসেজ/চ্যাট করুন</h3></a></th>
+                                        @endif
+                                    </tr>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        <div class="col-md-12" style="margin-top: 10px">
+                            <h4>বিজ্ঞাপনটি শেয়ার করুন</h4><hr>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=ghoreyboshe.com/single-job-view/{{$job->id}}" target="_blank" class="share-icon facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="https://twitter.com/intent/tweet?url=https://ghoreyboshe.com/single-job-view/{{$job->id}}&text={{ $job->ad_title}} বিস্তারিত দেখতে ক্লিক করুন " target="_blank" class="share-icon twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="https://plus.google.com/share?url=ghoreyboshe.com/single-job-view/{{$job->id}}" target="_blank" class="share-icon gplus">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                            <hr />
+                        </div>
+
+                        <div class="col-md-12">
+                            <img src="{{asset('/') }}front/images/ResizerImage336X280.jpg" class="img-fluid img-thumbnail">
+                        </div>
+
+                        </div>
+
+
+
                     </div>
                 </div>
 
 
-                <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-8">
                     <h3>কাজের বিবরণ</h3>
                     <p>{!! $job->description !!}</p>
                 </div>
 
+
+
+            </div>
+
+
             </div>
         </div>
-    </div>
+
 
     <!--        related jobs start-->
 
@@ -227,5 +316,48 @@
             </div>
         </div>
     </div>
+
+
+
+
+    {{--chat model here--}}
+    <div class="modal fade" id="chat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">{{$job->ad_title}}</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img style="    height: 100px;width: 139px;margin-top: 30px;" src="{{asset($job->product_image1) }}"/>
+                        </div>
+
+                        <div class="col-md-9">
+                            <h3>{{$job->product_price}}Tk ,{{$job->product_price_check}}</h3>
+                            <p>{!!str_limit($job->product_description,100)!!}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <form action="{{route('chat_user_create',$job->id)}}" method="get">
+                    <div class="modal-body">
+                        <input type="text" class="form-control" name="message" placeholder="ম্যাসেজ">
+                        <input type="hidden" value="" name="sellerid">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
 
 @endsection
