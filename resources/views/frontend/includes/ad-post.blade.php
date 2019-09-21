@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-4" style="border: 1px solid">
+        <div class="col-md-4">
             <div class="owl-carousel">
                 <div> <img src="{{asset('/') }}front/images/download.png" style="width: 100px;height: 150px"> </div>
                 <div> <img src="{{asset('/') }}front/images/download.png" style="width: 100px;height: 150px"> </div>
@@ -22,21 +22,20 @@
                 
             </div>
             @if(Session::get('frontUserId'))
-                <a href="{{route('post-ad')}}" class="btn btn-ad-post btn-lg">GhoreyBoshe.com এ আপনার বিজ্ঞাপন দিন </a>
+                <a href="{{route('post-ad')}}" class="btn btn-success btn-lg">GhoreyBoshe.com এ আপনার বিজ্ঞাপন দিন </a>
             @else
-                <a href="{{route('signup-options')}}" class="btn btn-ad-post btn-lg">GhoreyBoshe.com এ আপনার বিজ্ঞাপন দিন</a>
+                <a href="{{route('signup-options')}}" class="btn btn-success btn-lg">GhoreyBoshe.com এ আপনার বিজ্ঞাপন দিন</a>
             @endif
         </div>
-        <div class="col-md-4" style="border: 1px solid;
-    height: 162px">
+        <div class="col-md-4" style="height: 162px">
             <p style="text-align: center;
-    font-size: 19px;
+    font-size: 17px;
     padding: 22px;">
                 খুব সহজে কিছু বিক্রি বা
                 কিনতে আপনার পন্যের প্রচার ও
                 বিক্রয় এর জন্য
                 GhoreyBoshe.com এ বিজ্ঞাপন
-                পোস্ট করুন            </p>
+                পোস্ট করুন </p>
         </div>
     </div>
 </div>

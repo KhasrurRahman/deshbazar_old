@@ -28,7 +28,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p><a href="{{route('/')}}">হোমপেজ</a> -> <a href="{{route('all-ad')}}">সকল বিজ্ঞাপন</a> -> <a href="{{route('divisional-product',['id'=>$div->id])}}"> {{$div->division_name}} </a> -> <a href="{{route('district-ad',['id'=>$district->id])}}"> {{$district->district_name}}</a> -> <a href="{{route('category-product',['id'=>$cat->id])}}"> {{$cat->category_name}} </a> -> <a href="{{route('subcategory-product',['id'=>$subCategory->id])}}"> {{$subCategory->subcategory_name}} </a> ->{{$product->ad_title}} </p>
+                    <p><a href="{{route('/')}}">হোমপেজ</a> -> <a href="{{route('all-ad')}}">সর্ব প্রকার বিজ্ঞাপন</a> -> <a href="{{route('divisional-product',['id'=>$div->id])}}"> {{$div->division_name}} </a> -> <a href="{{route('district-ad',['id'=>$district->id])}}"> {{$district->district_name}}</a> -> <a href="{{route('category-product',['id'=>$cat->id])}}"> {{$cat->category_name}} </a> -> <a href="{{route('subcategory-product',['id'=>$subCategory->id])}}"> {{$subCategory->subcategory_name}} </a> ->{{$product->ad_title}} </p>
                 </div>
                 <div class="col-md-6 prod_img">
                     <div class="flexslider">
@@ -91,74 +91,67 @@
                             <th>মূল্য (৳)</th>
                             <td>{{$product->product_price}} <br />{{$product->product_price_check}}</td>
                         </tr>
-                        <tr class="danger">
+                        <tr class="success">
                             <th>কন্ডিশন</th>
                             <td>{{$product->product_condition}}</td>
                         </tr>
                         @if($product->product_brand)
-                        <tr class="warning">
+                        <tr class="success">
                             <th>ব্র্যান্ড</th>
                             <td>{{$product->product_brand}}</td>
                         </tr>
                         @endif
                         @if($product->product_model)
-                            <tr class="info">
-                                <th>মডেল</th>
-                                <td>{{$product->product_model}}</td>
-                            </tr>
-                        @endif
-
-                        @if($product->product_model)
-                            <tr class="info">
+                            <tr class="success">
                                 <th>মডেল</th>
                                 <td>{{$product->product_model}}</td>
                             </tr>
                         @endif
 
                         @if(isset($product->product_reality))
-                            <tr class="info">
+                            <tr class="success">
                                 <th>জেনুইন: </th>
                                 <td>{{$product->product_reality}}</td>
                             </tr>
                         @endif
 
                         @if(isset($product->product_model_year_cc))
-                            <tr class="info">
+                            <tr class="success">
                                 <th>মডেল সাল ও সিসি: </th>
                                 <td>{{$product->product_model_year_cc}}</td>
                             </tr>
                         @endif
 
                         @if(isset($product->nibondhon_year))
-                           <tr class="info">
+                           <tr class="success">
                             <th>নিবন্ধন সাল:</th>
                             <td> {{$product->nibondhon_year}}</td>
                         </tr>
                         @endif
 
                         @if(isset($product->fuel))
-                            <tr class="warning">
+                            <tr class="success">
                                <th> কি তেলে চলে:</th>
                                <td> {{$product->fuel}}</td>
                             </tr>
                         @endif
 
                         @if(isset($product->km_ride))
-                            <tr class="info">
+                            <tr class="success">
                                 <th>যানবাহন কত কিলোমিটার চলচ্ছেঃ</th>
                                 <td> {{$product->km_ride}}</td>
                             </tr>
                         @endif
 
                         @if(isset($product->servising))
-                            <tr class="info">
+                            <tr class="success">
                                 <th>গাড়ি এই যাবত কতবার সার্ভিস হয়েছে: </th>
                                 <td>{{$product->servising}}</td>
                             </tr>
                         @endif
 
                         @if(isset($product->village_ord))
-                            <tr class="info">
+                            <tr class="success">
                                <th>গ্রাম ও ওয়ার্ডঃ:</th>
                                <td> {{$product->village_ord}}</td>
                             </tr>
@@ -206,7 +199,7 @@
 
 
         <div class="container">
-            <div class="col-sm-12 col-lg-8 col-md-12  ">
+            <div class="col-sm-12 col-lg-8 col-md-8  ">
                 <h3>যোগাযোগ করুন</h3>
                 <table class="table">
                     <tr class="active">
@@ -223,12 +216,18 @@
                         @endif
                     </tr>
                     </tr>
+
                 </table>
             </div>
-
-            <div class="col-sm-12 col-lg-4 col-md-12">
+            <div class="col-sm-12 col-lg-4 col-md-4">
                 <img src="{{asset('/') }}front/images/ResizerImage336X280.jpg" class="img-fluid img-thumbnail">
             </div>
+            <div class="col-sm-12 col-lg-12 col-md-12" style="margin-top: -70px">
+                <h3>পণ্য টি কিনতে আজই যোগাযোগ করুনঃ</h3>
+                <img src="{{asset('/') }}front/img/payment.PNG" class="img-fluid img-thumbnail">
+            </div>
+
+
         </div>
 
     </div>

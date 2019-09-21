@@ -179,6 +179,39 @@
                     </div>
 
 
+
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapse_manu2"></a>
+                                </h4>
+                            </div>
+                            <div id="collapse_manu2" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="#">জেলা নির্বাচন করুন</a>
+                                            <ul>
+                                                @foreach($divisions as $division)
+                                                    <li class="media">
+                                                        <a href="{{route('divisional-product',['id'=>$division->id])}}">
+                                                            <div class="media-object media-left">
+
+                                                            </div>
+                                                            <div class="media-body">{{$division->division_name}}
+                                                                <span style="color:darkslategray;">({{$division->divisional_products_count}})</span>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="col-md-8">
                     <div class="col-md-12">

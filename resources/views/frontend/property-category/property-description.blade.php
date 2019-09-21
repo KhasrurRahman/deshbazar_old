@@ -186,7 +186,7 @@
                                 <div class="col-md-12 form-group">
                                     <label class="text-success">আপনার জমি  </label>
                                     <label><input type="radio" name="palce_type" value="কৃষি" />কৃষি</label>
-                                    <label><input type="radio" name="palce_type" value="ররবাণিজ্যিক" />রবাণিজ্যিক</label>
+                                    <label><input type="radio" name="palce_type" value="ররবাণিজ্যিক" />বাণিজ্যিক</label>
                                     <label><input type="radio" name="palce_type" value="আবাসিক" />আবাসিক</label>
                                     <label><input type="radio" name="palce_type" value="রাস্তার পার্শে" />রাস্তার পার্শে</label>
                                     <span class="text-danger">{{$errors->has('product_reality') ? $errors->first('product_reality'):' '}}</span>

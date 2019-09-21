@@ -27,7 +27,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p><a href="{{route('/')}}">হোমপেজ</a> -> <a href="{{route('all-ad')}}">সকল বিজ্ঞাপন</a> -> <a href="{{route('divisional-product',['id'=>$div->id])}}"> {{$div->division_name}} </a> -> <a href="{{route('district-ad',['id'=>$district->id])}}"> {{$district->district_name}}</a> -> <a href="{{route('category-product',['id'=>$cat->id])}}"> {{$cat->category_name}} </a> -> <a href="{{route('subcategory-product',['id'=>$subCategory->id])}}"> {{$subCategory->subcategory_name}} </a> ->{{$job->ad_title}} </p>
+                    <p><a href="{{route('/')}}">হোমপেজ</a> -> <a href="{{route('all-ad')}}">সর্ব প্রকার বিজ্ঞাপন</a> -> <a href="{{route('divisional-product',['id'=>$div->id])}}"> {{$div->division_name}} </a> -> <a href="{{route('district-ad',['id'=>$district->id])}}"> {{$district->district_name}}</a> -> <a href="{{route('category-product',['id'=>$cat->id])}}"> {{$cat->category_name}} </a> -> <a href="{{route('subcategory-product',['id'=>$subCategory->id])}}"> {{$subCategory->subcategory_name}} </a> ->{{$job->ad_title}} </p>
                 </div>
                 <div class="col-md-12" >
                     <div class="col-md-8">
@@ -42,23 +42,23 @@
                         <div class="col-md-12" style="padding: 21px;box-shadow: 0px 0px 10px seagreen;">
                             <div class="col-md-5">
                                 <table class="table">
-                                    <tr class="bg-danger">
+                                    <tr class="bg-success">
                                         <th>চাকরির অবস্থান</th>
                                         <td>{{$job->district_name}}</td>
                                     </tr>
-                                    <tr class="bg-danger">
+                                    <tr class="bg-success">
                                         <th>কোম্পানি</th>
                                         <td>{{$job->company_name}}</td>
                                     </tr>
-                                    <tr class="bg-danger">
+                                    <tr class="bg-success">
                                         <th>কাজের টাইপ</th>
                                         <td>{{$job->job_type}}</td>
                                     </tr>
-                                    <tr class="bg-warning">
+                                    <tr class="bg-success">
                                         <th>কাজের বিভাগ</th>
                                         <td>{{$job->industry}}</td>
                                     </tr>
-                                    <tr class="bg-danger">
+                                    <tr class="bg-success">
                                         <th>চাকুরি অবস্তানের নাম</th>
                                         <td>{{$job->designation}}</td>
                                     </tr>
@@ -66,26 +66,26 @@
                                         <th>শিক্ষাগত যোগ্যতা </th>
                                         <td>{{$job->minimum_requirement}}</td>
                                     </tr>
-                                    <tr class="bg-danger">
+                                    <tr class="bg-success">
                                         <th>কাজের অভিজ্ঞতা</th>
                                         <td>{{$job->skill}}</td>
                                     </tr>
 {{---------------}}
 
 
-                                    <tr class="bg-warning">
+                                    <tr class="bg-success">
                                         <th>আবেদনকারীর বয়স:</th>
                                         <td>{{$job->candidate_age}}</td>
                                     </tr>
-                                    <tr class="bg-warning">
+                                    <tr class="bg-success">
                                         <th>জব লোকেশনঃ</th>
                                         <td>{{$job->job_location}}</td>
                                     </tr>
-                                    <tr class="bg-warning">
+                                    <tr class="bg-success">
                                         <th>কোম্পানি সুযোগ সুবিধাঃ</th>
                                         <td>{{$job->company_facility}}</td>
                                     </tr>
-                                    <tr class="bg-warning">
+                                    <tr class="bg-success">
                                         <th>ককোম্পানি যানবাহন সুবিধাঃ</th>
                                         <td>{{$job->company_transport_facility}}</td>
                                     </tr>
@@ -111,11 +111,11 @@
                                             <td>Negotiable</td>
                                         @endif
                                     </tr>
-                                    <tr class="bg-info">
+                                    <tr class="bg-success">
                                         <th>পদের সংখ্যা</th>
                                         <td>{{$job->total_vacancies }}</td>
                                     </tr>
-                                    <tr class="bg-info">
+                                    <tr class="bg-success">
                                         <th>আবেদনকারীর বয়স</th>
                                         <td>{{$job->age_limit}}</td>
                                     </tr>
@@ -123,16 +123,16 @@
                                         <th>জেন্ডার</th>
                                         <td>{{$job->gender}}</td>
                                     </tr>
-                                    <tr class="bg-warning">
+                                    <tr class="bg-success">
                                         <th>অভিজ্ঞতা</th>
                                         <td>{{$job->experience}}</td>
                                     </tr>
-                                    <tr class="bg-warning">
+                                    <tr class="bg-success">
                                         <th>শিক্ষাগত অভিজ্ঞতা </th>
                                         <td>{{$job->education_sector}}</td>
                                     </tr>
 
-                                    <tr class="bg-warning">
+                                    <tr class="bg-success">
                                         <th>আবেদন করার শেষ তারিখ</th>
                                         <td>{{$job->expire_date}}</td>
                                     </tr>
@@ -140,23 +140,23 @@
 
 {{--                                    -----------}}
 
-                                    <tr class="bg-danger">
+                                    <tr class="bg-success">
                                         <th>কোম্পানি ফেস্টিভ্যাল বোনাসঃ</th>
                                         <td>{{$job->company_fastival_bonus}}</td>
                                     </tr>
-                                    <tr class="bg-danger">
+                                    <tr class="bg-success">
                                         <th>কোম্পানি কি প্রকারঃ</th>
                                         <td>{{$job->company_fee_plan}}</td>
                                     </tr>
-                                    <tr class="bg-danger">
+                                    <tr class="bg-success">
                                         <th>কোম্পানি বেতন ভাড়বেঃ</th>
                                         <td>{{$job->company_bill_incrase}}</td>
                                     </tr>
-                                    <tr class="bg-danger">
+                                    <tr class="bg-success">
                                         <th>কোম্পানি ওভার টাইম সুবিধাঃ</th>
                                         <td>{{$job->company_full_time}}</td>
                                     </tr>
-                                    <tr class="bg-danger">
+                                    <tr class="bg-success">
                                         <th>কোম্পানি ওভার টাইম সুবিধাঃ</th>
                                         <td>{{$job->company_full_time}}</td>
                                     </tr>
@@ -234,6 +234,10 @@
 
             </div>
 
+            <div class="col-sm-12 col-lg-12 col-md-12" style="">
+                <h3>পণ্য টি কিনতে আজই যোগাযোগ করুনঃ</h3>
+                <img src="{{asset('/') }}front/img/payment.PNG" class="img-fluid img-thumbnail">
+            </div>
 
             </div>
         </div>
@@ -332,12 +336,12 @@
                     </button>
                     <div class="row">
                         <div class="col-md-3">
-                            <img style="    height: 100px;width: 139px;margin-top: 30px;" src="{{asset($job->product_image1) }}"/>
+                            <img style="    height: 100px;width: 139px;margin-top: 30px;" src="{{asset($job->company_logo) }}"/>
                         </div>
 
                         <div class="col-md-9">
-                            <h3>{{$job->product_price}}Tk ,{{$job->product_price_check}}</h3>
-                            <p>{!!str_limit($job->product_description,100)!!}</p>
+{{--                            <h3>{{$job->product_price}}Tk ,{{$job->product_price_check}}</h3>--}}
+{{--                            <p>{!!str_limit($job->product_description,100)!!}</p>--}}
                         </div>
                     </div>
 

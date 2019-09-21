@@ -156,11 +156,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         <button type="submit" name="btn" class="btn btn-success btn-block"> লগ ইন</button>
                     </div>
 
-                    <div class="text-center"><p>আপনি আপনার পাস্বরদ মনে করতে পারছেন না? রিকভারি করতে চান? </p><a>এখানে ক্লিক করুন।</a></div>
+                    <div class="text-center"><p>আপনি আপনার পাস্বরদ মনে করতে পারছেন না? রিকভারি করতে চান? </p><a href="{{route('password_reset')}}">এখানে ক্লিক করুন।</a></div>
                 {{Form::close()}}
                 <hr/>
                 <div class="text-center">
-                    <h5>আপনার ঘরেবসে.কম এ অ্যাকাউন্ট আছে কি? না? নিছের সাইনআপ বাটোন এ ক্লিক করুন।</h5>
+                    <h5>আপনার ঘরেবসে.কম এ অ্যাকাউন্ট আছে কি? না? নিছের সাইনআপ বাটন এ ক্লিক করুন।</h5>
                     <a href="{{route('signup-options')}}"  class="btn btn-default" style="background: #5cb85c">সাইন আপ</a>
                 </div>
 

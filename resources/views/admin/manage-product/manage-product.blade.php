@@ -8,7 +8,7 @@
                     <h4 class="text-success text-center">Manage Product Ad</h4>
                 </div>
                 <div class="panel-body">
-                    <h3 class="text-success">{{Session::get('message')}}</h3>
+                    <h3 class="text-success">{{Session::get('success')}}</h3>
                     <table class="table table-bordered">
                         <tr class="bg-primary">
                             <th>Sl. No</th>
@@ -28,12 +28,13 @@
                                 <td>{{$product->created_at->diffForHumans()}}</td>
                                 <td>{{$product->publication_status}}</td>
                                 <td>{{$product->top_ad == 1 ? 'Yes' : 'No'}}</td>
+
                                 <td>
                                     <a href="{{route('view-product-ad',['id'=>$product->id])}}" class="btn btn-xs btn-info" title="View product details"><span class="glyphicon glyphicon-zoom-in"></span></a>
                                     @if($product->publication_status == 'Published')
                                         <a href="{{route('unpublish-product-ad',['id'=>$product->id])}}" class="btn btn-xs btn-primary" title="Unpublish product"><span class="glyphicon glyphicon-arrow-up"></span></a>
                                     @else
-                                        <a href="{{route('publish-product-ad',['id'=>$product->id])}}" class="btn btn-xs btn-warning" title="Publish product"><span class="glyphicon glyphicon-arrow-down"></span></a>
+                                        <a href="{{route('publish-product-ad',['id'=>$product->id])}}" class="btn btn-xs btn-warning" title="Publish product" ><span class="glyphicon glyphicon-arrow-down"></span></a>
                                     @endif
                                     <a href="{{route('edit-product-ad',['id'=>$product->id])}}" class="btn btn-success btn-xs" title="edit Product Ad">
                                         <span class="glyphicon glyphicon-edit"></span>
@@ -53,4 +54,32 @@
             </div>
         </div>
     </div>
+
+        @if (session('message'))
+                <script>
+                    function sms() {
+                        var mobile = {{Session::get('message')}}
+                            $.ajax({
+                                    type : "post",
+                                    url : "http://users.sendsmsbd.com/smsapi",
+                                    data : {
+                                        "api_key" : "R60003685d831c646089b7.77651031",
+                                        "senderid" : "8804445629106",
+                                        "type" : "text",
+                                        "scheduledDateTime" : "",
+                                        "msg" : "your product add is published",
+                                        "contacts" : '"'+'880'+mobile+'"'
+                                    }
+
+                                }
+                            );
+                        }
+                    window.onload = sms;
+                </script>
+            @endif
+
+
+
+
+
 @endsection

@@ -47,6 +47,10 @@ class FrontUserRegisterController extends Controller
 
             Session::put('frontUserId',$frontUser->id);
             Session::put('frontUserName',$frontUser->name);
+
+            $user_mobile = $frontUser->phone_number;
+
+            Session::flash('mobile',$user_mobile);
             return view('frontend.post-ad.post-ad-content');
         }else{
             return redirect('/')->with('message','User not found');
@@ -135,5 +139,9 @@ class FrontUserRegisterController extends Controller
             return redirect('/front-user-dashboard');
         }
     }
+
+
+
+
 
 }

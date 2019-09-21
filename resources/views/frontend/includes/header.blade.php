@@ -9,14 +9,14 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="{{route('/')}}">
-                        <img src="{{asset($websiteInformation->logo) }}" alt="Logo" style="height: 158px;width: 215px;margin-bottom: -38px;"/>
+                        <img src="{{asset($websiteInformation->logo) }}" alt="Logo" style="height: 135px;width: 215px;margin-bottom: -38px;"/>
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar" @if(Session::get('frontUserId'))
                         style="font-size: 17px;"
                         @endif>
                     <ul class="nav navbar-nav">
-                        <li><a href="{{route('all-ad')}}">{{ __('text.alladd') }}</a></li>
+                        <li><a href="{{route('all-ad')}}">সর্ব প্রকার বিজ্ঞাপন</a></li>
                         <li><a href="{{route('ghoreyboshe-family')}}">Ghoreyboshe.com এর পরিবার</a></li>
                     </ul>
                     @php
@@ -44,9 +44,9 @@
                             @endif
                         </ul>
                         @if(Session::get('frontUserId'))
-                            <a href="{{route('post-ad')}}" class="btn btn-primary navbar-btn">আপনার বিজ্ঞাপন পোস্ট করুন</a>
+                            <a href="{{route('post-ad')}}" class="btn btn-primary navbar-btn" style="box-shadow: 1px 2px 3px 0px black;">আপনার বিজ্ঞাপন পোস্ট করুন</a>
                         @else
-                            <a href="{{route('signup-options')}}" class="btn btn-primary navbar-btn">আপনার বিজ্ঞাপন পোস্ট করুন</a>
+                            <a href="{{route('signup-options')}}" class="btn btn-primary navbar-btn" style="box-shadow: 1px 2px 3px 0px black;">আপনার বিজ্ঞাপন পোস্ট করুন</a>
                         @endif
                     </div>
                 </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\FrontUser;
 use App\JobDetail;
 use App\ProductInformation;
 use Illuminate\Http\Request;
@@ -38,6 +39,9 @@ class ManageJobController extends Controller
         $adInformation ->publication_status = 'Published';
         $adInformation ->save();
 
+        $user_mobile = FrontUser::find($adInformation->user_id)->phone_number;
+
+        Session::flash('mobile',$user_mobile);
 
         return redirect('/manage-job-ad')->with('message','Job Ad Published successfully');
     }

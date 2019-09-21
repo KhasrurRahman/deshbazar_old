@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\FrontUser;
 use App\JobDetail;
 use App\ProductDetail;
 use App\ProductImage;
@@ -124,8 +125,10 @@ class ManageProductController extends Controller
         $adInformation ->publication_status = 'Published';
         $adInformation ->save();
 
+        $user_mobile = FrontUser::find($adInformation->user_id)->phone_number;
 
-        return redirect('/manage-product-ad')->with('message','Product Ad Published successfully');
+        Session::flash('success', 'add publish successfully');
+        return redirect('/manage-product-ad')->with('message',$user_mobile);
     }
     public function unpublishProductAd($id){
         $product = ProductDetail::find($id);

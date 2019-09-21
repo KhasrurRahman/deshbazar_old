@@ -24,15 +24,15 @@ body{
 #main_menu .navbar-inverse {
     background-color: #3c763d;
     border-color: #3c763d;
-    font-size: 20px;
+    font-size: 18px;
 }
 #main_menu .navbar-inverse .navbar-nav > li > a {
     color: #fff;
-    padding-top: 30px;
+    /*padding-top: 30px;*/
 }
 .navbar-btn {
-    margin-top: 23px;
-    font-size: 20px;
+    /*margin-top: 23px;*/
+    font-size: 18px;
 }
 
 /*main_menu end*/

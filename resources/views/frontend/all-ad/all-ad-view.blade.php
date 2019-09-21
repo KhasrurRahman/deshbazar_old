@@ -16,19 +16,19 @@
                         <div class="col-md-3 menu_col">
                             <button type="button" class="btn btn-default btn-block" data-toggle="modal" data-target="#location_modal">
                                 <i class="fa fa-location-arrow"></i>
-                                অবস্থান নির্বাচন করুন</button>
+                                আপনার অবস্থান</button>
                         </div>
                         <div class="col-md-3 menu_col">
                             <button type="button" class="btn btn-default btn-block" data-toggle="modal" data-target="#category_modal">
                                 <i class="fa fa-tag"></i>
-                                শ্রেণী নির্বাচন করুন</button>
+                                কেনা বেচা ক্যাটাগরি</button>
                         </div>
                         <div class=" col-md-6 menu_col">
                             <div class="input-group btn-block">
-                                <input type="text" class="form-control" placeholder="আপনি কী খুঁজছেন?" name="search">
+                                <input type="text" class="form-control" placeholder="আপনি খুব সহজে খুজে নিতে পারেন" name="search">
                                 <div class="input-group-btn ">
                                     <button class="btn btn-default btn-block" type="submit">
-                                        <i class="fa fa-search"></i>অনুসন্ধান
+                                        <i class="fa fa-search"></i>খুজুন
                                     </button>
                                 </div>
                             </div>

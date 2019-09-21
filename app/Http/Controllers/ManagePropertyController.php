@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\FrontUser;
 use App\ProductImage;
 use App\ProductInformation;
 use App\PropertyDetail;
@@ -41,8 +42,9 @@ class ManagePropertyController extends Controller
         $adInformation ->publication_status = 'Published';
         $adInformation ->save();
 
+        $user_mobile = FrontUser::find($adInformation->user_id)->phone_number;
 
-        return redirect('/manage-property-ad')->with('message','Property Ad Published successfully');
+        return redirect('/manage-property-ad')->with('message','Property Ad Published successfully',$user_mobile);
     }
     public function unpublishPropertyAd($id){
         $property = PropertyDetail::find($id);
@@ -54,6 +56,9 @@ class ManagePropertyController extends Controller
         $adInformation ->publication_status = 'Pending';
         $adInformation ->save();
 
+        $user_mobile = FrontUser::find($adInformation->user_id)->phone_number;
+
+        Session::flash('mobile',$user_mobile);
         return redirect('/manage-property-ad')->with('message','Property Ad Unpublished successfully');
     }
     public function topPropertyAd($id){

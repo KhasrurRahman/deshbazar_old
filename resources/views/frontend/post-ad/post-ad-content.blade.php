@@ -70,7 +70,8 @@
                                     <img src="{{asset('/') }}front/images/asdas.jpg" style="height: 112px">
                                 </div>
                                 <div class="col-md-4">
-                                    <button class="btn extra-info" style="width: 338px ;">আপনি প্রথমে বিজ্ঞাপন ফ্রি <br>পোস্ট করুন আমাদের বিজ্ঞাপন দেয়ার <br>নিয়মকানুন জেনে নিনি </button>
+                                    <a href="{{route('terms')}}">
+                                    <button class="btn extra-info" style="width: 338px ;">বিনামূল্য এখনি আপনার বিজ্ঞাপন <br>পোস্ট করুনও আমাদের নিয়ম মেনে <br> আপনার বিজ্ঞাপন পোস্ট করুন </button></a>
                                 </div>
                                 <div class="col-md-4" style="float: right">
                                     <p style="    background: #0bbf0b;
@@ -98,5 +99,27 @@
 
     <!--rules end-->
 
+    @if (session('mobile'))
+        <script>
+            function sms() {
+                var mobile = {{Session::get('mobile')}}
+                $.ajax({
+                        type : "post",
+                        url : "http://users.sendsmsbd.com/smsapi",
+                        data : {
+                            "api_key" : "R60003685d831c646089b7.77651031",
+                            "senderid" : "8804445629106",
+                            "type" : "text",
+                            "scheduledDateTime" : "",
+                            "msg" : "your Account Successfully opened",
+                            "contacts" : '"'+'880'+mobile+'"'
+                        }
 
+                    }
+                );
+            }
+            window.onload = sms;
+
+        </script>
+    @endif
 @endsection

@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use App\FrontUser;
 use App\JobDetail;
+use App\Notifications\FrontUserresetPassword;
 use App\ProductDetail;
 use App\ProductDistrict;
 use App\ProductInformation;
 use App\PropertyDetail;
 use Illuminate\Http\Request;
 use DB;
+use Notification;
+use Illuminate\Support\Facades\Password;
+use PhpParser\Node\Stmt\Return_;
 use Session;
 
 class FrontUserDashboardController extends Controller
@@ -190,5 +194,72 @@ class FrontUserDashboardController extends Controller
         }
         return redirect('/front-user-dashboard')->with('message','Ad deleted successfully.');
     }
+
+
+    public function password_reset(Request $request){
+
+        return view('frontend.passwordreset');
+    }
+
+
+    public function password_reset_check(Request $request){
+            $email  = $request->email;
+            $user= FrontUser::where('email',$email)->first();
+
+            if(isset($user)){
+                $user_email = new FrontUser();
+                $user_email->email = $user->email;
+                $user_email->notify(new FrontUserresetPassword($user));
+                return redirect()->back()->with('message','Message sent successfully,Please Check Your email');
+            }else{
+                return redirect()->back()->with('message','No account found for this email,Please Check');
+            }
+    }
+
+
+    public function passwordreset_confirm($id){
+        $user = FrontUser::find($id);
+        return view('frontend.passwordreset_confiem',compact('user'));
+    }
+
+
+    public function passwordreset_confirm_save(Request $request){
+        if($request->password){
+            $this->validate($request,[
+                'password' => 'required|string|min:6',
+                'new_password' => 'required|string|min:6|confirmed',
+            ]);
+        }else{
+            $this->validate($request,[
+                'new_password' => 'required|string|min:6|confirmed',
+            ]);
+        }
+        $user = FrontUser::find($request->front_user_id);
+        if ($request->new_password == $request->new_password_confirmation){
+            $user->password = bcrypt($request->new_password);
+            $user->update();
+            return redirect('/')->with('message','Password set successfully.');
+        } else{
+            return redirect()->back()->with('message','new and confirm password does not match');
+        }
+    }
+
+public function sms_send(){
+        return view('frontend.sms');
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

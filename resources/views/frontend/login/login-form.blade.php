@@ -49,7 +49,7 @@
                             <button type="submit" class="btn btn-success btn-block"> লগ ইন</button>
                         </div>
 
-                    <div class="text-center"><p>আপনি আপনার পাস্বরদ মনে করতে পারছেন না? রিকভারি করতে চান? </p><a>এখানে ক্লিক করুন।</a></div>
+                    <div class="text-center"><p>আপনি আপনার পাস্বরদ মনে করতে পারছেন না? রিকভারি করতে চান? </p><a href="{{route('password_reset')}}">এখানে ক্লিক করুন।</a></div>
                     {{Form::close()}}
                     <hr/>
                     <div class="text-center">

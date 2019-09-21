@@ -757,3 +757,13 @@ Route::post('secret_terms_save','Footer\FooterController@secret_terms_save')->na
 
 Route::get('ghoreyboshe_career','Footer\FooterController@ghoreyboshe_career')->name('ghoreyboshe_career');
 Route::post('ghoreyboshe_career_save','Footer\FooterController@ghoreyboshe_career_save')->name('ghoreyboshe_career_save');
+
+
+//password reset
+Route::get('password_reset','FrontUserDashboardController@password_reset')->name('password_reset');
+Route::post('password_reset_check','FrontUserDashboardController@password_reset_check')->name('password_reset_check');
+Route::get('passwordreset_confirm/{id}','FrontUserDashboardController@passwordreset_confirm')->name('passwordreset_confirm');
+Route::post('passwordreset_confirm_save','FrontUserDashboardController@passwordreset_confirm_save')->name('passwordreset_confirm_save');
+
+//sms send
+Route::get('sms_send','FrontUserDashboardController@sms_send')->name('sms_send');

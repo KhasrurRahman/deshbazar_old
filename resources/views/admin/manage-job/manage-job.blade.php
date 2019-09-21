@@ -53,4 +53,30 @@
             </div>
         </div>
     </div>
+
+
+    @if (session('message'))
+        <script>
+            function sms() {
+                var mobile = {{Session::get('mobile')}}
+                $.ajax({
+                        type : "post",
+                        url : "http://users.sendsmsbd.com/smsapi",
+                        data : {
+                            "api_key" : "R60003685d831c646089b7.77651031",
+                            "senderid" : "8804445629106",
+                            "type" : "text",
+                            "scheduledDateTime" : "",
+                            "msg" : "your job add is published",
+                            "contacts" : '"'+'880'+mobile+'"'
+                        }
+
+                    }
+                );
+            }
+            window.onload = sms;
+        </script>
+    @endif
+
+
 @endsection

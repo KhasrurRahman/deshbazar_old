@@ -28,7 +28,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p><a href="{{route('/')}}">হোমপেজ</a> -> <a href="{{route('all-ad')}}">সকল বিজ্ঞাপন</a> -> <a href="{{route('divisional-product',['id'=>$div->id])}}"> {{$div->division_name}} </a> -> <a href="{{route('district-ad',['id'=>$district->id])}}"> {{$district->district_name}}</a> -> <a href="{{route('category-product',['id'=>$cat->id])}}"> {{$cat->category_name}} </a> -> <a href="{{route('subcategory-product',['id'=>$subCategory->id])}}"> {{$subCategory->subcategory_name}} </a> ->{{$property->ad_title}} </p>
+                    <p><a href="{{route('/')}}">হোমপেজ</a> -> <a href="{{route('all-ad')}}">সর্ব প্রকার বিজ্ঞাপন</a> -> <a href="{{route('divisional-product',['id'=>$div->id])}}"> {{$div->division_name}} </a> -> <a href="{{route('district-ad',['id'=>$district->id])}}"> {{$district->district_name}}</a> -> <a href="{{route('category-product',['id'=>$cat->id])}}"> {{$cat->category_name}} </a> -> <a href="{{route('subcategory-product',['id'=>$subCategory->id])}}"> {{$subCategory->subcategory_name}} </a> ->{{$property->ad_title}} </p>
                 </div>
                 <div class="col-md-6 prod_img">
                     <div class="flexslider">
@@ -87,7 +87,7 @@
                     <p>{{Carbon\Carbon::parse($property->updated_at)->format("F j, Y, g:i A")}}, {{$property->location}}, {{$property->district_name}}</p>
                     <hr/>
                     <table class="table">
-                        <tr class="warning">
+                        <tr class="success">
                             <th>মূল্য (৳)</th>
                             <td>{{$property->property_price}} <br />{{$property->property_price_check}}</td>
                         </tr>
@@ -98,19 +98,19 @@
                             </tr>
                         @endif
                         @if($property->bath)
-                            <tr class="info">
+                            <tr class="success">
                                 <th>বাথ</th>
                                 <td>{{$property->bath}}</td>
                             </tr>
                         @endif
                         @if($property->home_area)
-                            <tr class="danger">
+                            <tr class="success">
                                 <th>ফ্ল্যাট / বাড়ির আয়তন</th>
                                 <td>{{$property->home_area}}  {{$property->home_area_unit}}  </td>
                             </tr>
                         @endif
                         @if($property->land_area)
-                            <tr class="info">
+                            <tr class="success">
                                 <th>জমির আয়তন</th>
                                 <td>{{$property->land_area}}  {{$property->land_area_unit}}  </td>
                             </tr>
@@ -123,13 +123,13 @@
                             </tr>
                         @endif
                         @if($property->location_point)
-                            <tr class="info">
+                            <tr class="success">
                                 <th>ঠিকানা</th>
                                 <td>{{$property->location_point}}</td>
                             </tr>
                         @endif
                         @if($property->village_word)
-                            <tr class="warning">
+                            <tr class="success">
                                 <th>গ্রাম ও ওয়ার্ড</th>
                                 <td>{{$property->village_word}}</td>
                             </tr>
@@ -201,8 +201,12 @@
             </table>
         </div>
 
-        <div class="col-sm-12 col-lg-4 col-md-12">
+        <div class="col-sm-12 col-lg-4 col-md-4">
             <img src="{{asset('/') }}front/images/ResizerImage336X280.jpg" class="img-fluid img-thumbnail">
+        </div>
+        <div class="col-sm-12 col-lg-12 col-md-12" style="margin-top: -70px">
+            <h3>পণ্য টি কিনতে আজই যোগাযোগ করুনঃ</h3>
+            <img src="{{asset('/') }}front/img/payment.PNG" class="img-fluid img-thumbnail">
         </div>
     </div>
 
@@ -280,6 +284,48 @@
 
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {{--    chat nodel here--}}
+    {{--chat model here--}}
+    <div class="modal fade" id="chat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">{{$property->ad_title}}</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img style="    height: 100px;width: 139px;margin-top: 30px;" src="{{asset($property->product_image1) }}"/>
+                        </div>
+
+                        <div class="col-md-9">
+                            <h3>{{$property->property_price}}Tk ,{{$property->property_price_check}}</h3>
+                            <p>{!!str_limit($property->description,100)!!}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <form action="{{route('chat_user_create',$property->id)}}" method="get">
+                    <div class="modal-body">
+                        <input type="text" class="form-control" name="message" placeholder="ম্যাসেজ">
+                        <input type="hidden" value="" name="sellerid">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>
