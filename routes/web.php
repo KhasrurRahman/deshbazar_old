@@ -767,3 +767,6 @@ Route::post('passwordreset_confirm_save','FrontUserDashboardController@passwordr
 
 //sms send
 Route::get('sms_send','FrontUserDashboardController@sms_send')->name('sms_send');
+Route::get('search_research_result','ManageProductController@search_result')->name('search_result');
+Route::get('search_research_result_property','ManageProductController@search_research_result_property')->name('search_research_result_property');
+Route::get('search_research_result_job','ManageProductController@search_research_result_job')->name('search_research_result_job');

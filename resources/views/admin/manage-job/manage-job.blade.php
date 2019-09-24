@@ -7,6 +7,35 @@
                 <div class="panel-heading">
                     <h4 class="text-success text-center">Manage Job Ad</h4>
                 </div>
+                <form action="{{route('search_research_result_job')}}" method="get">
+                    {!! csrf_field() !!}
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="exampleFormControlSelect1">search By Mobile number</label>
+                            <input type="number" class="form-control" name="mobile" placeholder="Search by phone number">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="exampleFormControlSelect1">search By Category</label>
+                            <select class="form-control" id="exampleFormControlSelect1" name="category">
+                                @php
+                                    $category = App\ProductSubcategory::where('category_id',3)->get();
+                                @endphp
+                                <option disabled selected>Select A category</option>
+                                @foreach($category as $ca)
+                                    <option value="{{$ca->id}}">{{$ca->subcategory_name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="col-md-4">
+                            <br>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                </form>
+
+
                 <div class="panel-body">
                     <h3 class="text-success">{{Session::get('message')}}</h3>
                     <table class="table table-bordered">

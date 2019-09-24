@@ -249,7 +249,18 @@ public function sms_send(){
   }
 
 
+public function product_search($id){
+        $user = FrontUser::where('phone_number',$id)->get();
 
+
+        foreach ($user as $user_id){
+            $info_id = ProductInformation::where('user_id',$user_id->id)->get();
+            foreach ($info_id as $info){
+                $product_details = ProductDetail::where('information_id',$info->id)->get();
+                echo $product_details;
+            }
+        }
+}
 
 
 

@@ -72,7 +72,7 @@ class ProductSellController extends Controller
         ]);
     }
     public function saveProductInformation(Request $request){
-        $this->productInfoValidate($request);
+//        $this->productInfoValidate($request);
 
         $frontUser = FrontUser::find($request->user_id);
         $frontUser->phone_number = $request->phone_number;

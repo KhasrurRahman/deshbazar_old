@@ -20,11 +20,11 @@
                             <label for="exampleFormControlSelect1">search By Category</label>
                             <select class="form-control" id="exampleFormControlSelect1" name="category">
                                 @php
-                                    $category = App\ProductCategory::all();
+                                $category = App\ProductCategory::all();
                                 @endphp
+                                <option disabled selected>Select A category</option>
                                 @foreach($category as $ca)
-
-                                    <option value="{{$ca->id}}">{{$ca->category_name}}</option>
+                                <option value="{{$ca->id}}">{{$ca->category_name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -35,7 +35,6 @@
                         </div>
                     </div>
                 </form>
-
 
 
                 <div class="panel-body">
@@ -50,8 +49,23 @@
                             <th>Top Ad</th>
                             <th>Action</th>
                         </tr>
+
+
+                        @php
+                            $user = App\FrontUser::where('phone_number', $mobile)->get();
+                        @endphp
+
+
                         @php($i=1)
-                        @foreach($products as $product)
+                        @foreach($user as $userid)
+                            @php
+                                $info_id = App\ProductInformation::where('user_id',$userid->id)->get();
+                            @endphp
+                        @foreach($info_id as $info)
+                            @php
+                                $products = App\ProductDetail::where('information_id',$info->id)->get();
+                            @endphp
+                            @foreach($products as $product)
                             <tr>
                                 <td>{{$i++}}</td>
                                 <td>{{$product->ad_title}}</td>
@@ -79,12 +93,17 @@
                                     <a href="{{route('delete-product-ad',['id'=>$product->information_id])}}" onclick="return confirm('Are you sure to delete this Ad!!')" class="btn btn-xs btn-danger" title="Delete product Ad"><span class="glyphicon glyphicon-trash"></span></a>
                                 </td>
                             </tr>
+                                @endforeach
+                            @endforeach
                         @endforeach
                     </table>
                 </div>
             </div>
         </div>
     </div>
+
+
+
 
         @if (session('message'))
                 <script>
@@ -108,9 +127,4 @@
                     window.onload = sms;
                 </script>
             @endif
-
-
-
-
-
 @endsection

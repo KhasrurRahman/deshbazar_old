@@ -7,8 +7,10 @@ use App\JobDetail;
 use App\ProductDetail;
 use App\ProductImage;
 use App\ProductInformation;
+use App\PropertyDetail;
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Support\Facades\Input;
 use Image;
 use Session;
 
@@ -127,8 +129,8 @@ class ManageProductController extends Controller
 
         $user_mobile = FrontUser::find($adInformation->user_id)->phone_number;
 
-        Session::flash('success', 'add publish successfully');
-        return redirect('/manage-product-ad')->with('message',$user_mobile);
+        Session::flash('message', 'add publish successfully');
+        return redirect('/manage-product-ad')->with('mobile',$user_mobile);
     }
     public function unpublishProductAd($id){
         $product = ProductDetail::find($id);
@@ -162,5 +164,62 @@ class ManageProductController extends Controller
         $adInformation->delete();
         $productAd->delete();
         return redirect('/manage-product-ad')->with('message','Ad deleted successfully.');
+    }
+
+    public function search_result()
+    {
+    $mobile = Input::get('mobile');
+    $cat = Input::get('category');
+
+    if (isset($mobile)){
+        Session::flash('message', 'search result Found');
+        return view('admin.search.search_result',compact('mobile'));
+    }elseif (isset($cat)){
+        return view('admin.search.search_result_category',compact('cat'));
+    }else{
+        $products = ProductDetail::orderBy('created_at','DESC')->get();
+        Session::flash('message', 'there is no input For Search');
+        return view('admin.manage-product.manage-product',['products'=>$products]);
+    }
+
+
+    }
+
+    public function search_research_result_property()
+    {
+    $mobile = Input::get('mobile');
+    $cat = Input::get('category');
+
+    if (isset($mobile)){
+        Session::flash('message', 'search result Found');
+        return view('admin.search.search_result_property',compact('mobile'));
+    }elseif (isset($cat)){
+        return view('admin.search.search_result_property_category',compact('cat'));
+    }else{
+        Session::flash('message', 'there is no input For Search');
+        $ads = PropertyDetail::orderBy('created_at','DESC')->get();
+        return view('admin.manage-property.manage-property',['ads'=>$ads]);
+    }
+
+
+    }
+
+    public function search_research_result_job()
+    {
+    $mobile = Input::get('mobile');
+    $cat = Input::get('category');
+
+    if (isset($mobile)){
+        Session::flash('message', 'search result Found');
+        return view('admin.search.search_result_job',compact('mobile'));
+    }elseif (isset($cat)){
+        return view('admin.search.search_result_job_category',compact('cat'));
+    }else{
+        Session::flash('message', 'there is no input For Search');
+        $ads = JobDetail::orderBy('created_at','DESC')->get();
+        return view('admin.manage-job.manage-job',['ads'=>$ads]);
+    }
+
+
     }
 }

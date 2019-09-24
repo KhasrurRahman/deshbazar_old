@@ -22,6 +22,7 @@
                                 @php
                                     $category = App\ProductCategory::all();
                                 @endphp
+                                <option disabled selected>Select A category</option>
                                 @foreach($category as $ca)
 
                                     <option value="{{$ca->id}}">{{$ca->category_name}}</option>
@@ -37,7 +38,6 @@
                 </form>
 
 
-
                 <div class="panel-body">
                     <h3 class="text-success">{{Session::get('message')}}</h3>
                     <table class="table table-bordered">
@@ -50,8 +50,19 @@
                             <th>Top Ad</th>
                             <th>Action</th>
                         </tr>
+
+
+                        @php
+                            $info_id = App\ProductInformation::where('category_id', $cat)->get();
+                        @endphp
+
+
                         @php($i=1)
-                        @foreach($products as $product)
+                        @foreach($info_id as $info)
+                            @php
+                                $products = App\ProductDetail::where('information_id',$info->id)->get();
+                            @endphp
+                            @foreach($products as $product)
                             <tr>
                                 <td>{{$i++}}</td>
                                 <td>{{$product->ad_title}}</td>
@@ -79,12 +90,17 @@
                                     <a href="{{route('delete-product-ad',['id'=>$product->information_id])}}" onclick="return confirm('Are you sure to delete this Ad!!')" class="btn btn-xs btn-danger" title="Delete product Ad"><span class="glyphicon glyphicon-trash"></span></a>
                                 </td>
                             </tr>
-                        @endforeach
+                                @endforeach
+                            @endforeach
                     </table>
                 </div>
             </div>
         </div>
     </div>
+
+
+
+
 
         @if (session('message'))
                 <script>
@@ -108,9 +124,5 @@
                     window.onload = sms;
                 </script>
             @endif
-
-
-
-
 
 @endsection

@@ -20,7 +20,7 @@
                     <div class="media">
                         <div class="media-body" >
                             <div class="media-object media-img_one">
-                                <img src="{{asset('/') }}front/images/add1.png" alt="" height="40" width="40" />
+                                <img src="https://img.icons8.com/cotton/64/000000/coin-wallet--v1.png" alt="" height="40" width="40" />
                             </div>
                             <div class="media-heading">
                                 <h3>এখনি বিক্রি করুন</h3><hr/>
@@ -40,7 +40,7 @@
                     <div class="media ">
                         <div class="media-body">
                             <div class="media-object media-img_two">
-                                <img src="{{asset('/') }}front/images/add2.png" alt="" height="40" width="40" />
+                                <img src="https://img.icons8.com/cute-clipart/64/000000/search.png" height="40" width="40">
                             </div>
                             <div class="media-heading">
                                 <h3>এখনি কিছু খুজুন</h3>
@@ -59,7 +59,7 @@
                 <div class="media">
                     <div class="media-body">
                         <div class="media-object">
-                            <img src="{{asset('/') }}front/images/add3.png" alt="" height="40" width="40" />
+                            <img src="https://img.icons8.com/cute-clipart/64/000000/plus.png" alt="" height="40" width="40" />
                         </div>
                         <div class="media-heading">
                             {{--<h4>আপনি বিজ্ঞাপন ফ্রি পেতে চান ?</h4>--}}
